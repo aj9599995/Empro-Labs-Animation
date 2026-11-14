@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Same Room, Two Stages | Quillfield Renovations (concept)</title>
+<meta name="description" content="A concept page: drag the handle to compare one room before and after renovation. The illustrations are invented.">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700..900&family=Hanken+Grotesk:wght@400..700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="rb-skip" href="#main">Skip to content</a>
+
+<header class="rb-nav">
+  <a class="rb-brand" href="#top">Quillfield Renovations</a>
+  <nav class="rb-links" aria-label="Main">
+    <a href="#compare">Compare</a>
+    <a href="#steps">How we work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="rb-hero" id="top" aria-labelledby="rb-title">
+    <div class="rb-copy">
+      <h1 id="rb-title" class="rb-title">Same room. Before and after the work.</h1>
+      <p class="rb-lead">Drag the handle, or use the arrow keys, to compare the two stages. The illustrations are invented to show the technique. They are not a real project.</p>
+      <ul class="rb-facts" aria-label="Concept project facts">
+        <li><strong>6 weeks</strong> on site</li>
+        <li><strong>3 trades</strong> working in turn</li>
+        <li><strong>1 plan</strong> agreed before work starts</li>
+      </ul>
+      <a class="rb-btn" href="#contact">Plan a project</a>
+    </div>
+
+    <figure class="rb-figure" id="compare">
+      <div class="rb-stage" id="rb-stage">
+        <!-- AFTER: the full image sits underneath -->
+        <svg class="rb-layer rb-after" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="After: a warm, furnished living room">
+          <defs>
+            <linearGradient id="rb-floor" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#c98c55"/>
+              <stop offset="1" stop-color="#a66a3c"/>
+            </linearGradient>
+            <radialGradient id="rb-glow" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#ffe6b0" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#ffe6b0" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="800" height="600" fill="#f2e6d2"/>
+          <rect y="420" width="800" height="180" fill="url(#rb-floor)"/>
+          <rect x="520" y="90" width="180" height="230" fill="#7a5a43"/>
+          <rect x="536" y="106" width="148" height="198" fill="#cfe6e4"/>
+          <path d="M490 90 L490 360 L514 360 L514 90 Z" fill="#d7b48b"/>
+          <path d="M706 90 L706 360 L730 360 L730 90 Z" fill="#d7b48b"/>
+          <ellipse cx="260" cy="505" rx="210" ry="46" fill="#e9d2b0"/>
+          <rect x="90" y="330" width="290" height="100" rx="14" fill="#2f5d50"/>
+          <rect x="80" y="300" width="310" height="52" rx="14" fill="#3b7163"/>
+          <rect x="110" y="318" width="50" height="40" rx="10" fill="#e8b96a"/>
+          <rect x="300" y="318" width="50" height="40" rx="10" fill="#e8b96a"/>
+          <line x1="400" y1="0" x2="400" y2="120" stroke="#8a6a4c" stroke-width="3"/>
+          <circle cx="400" cy="140" r="20" fill="#ffe2a6"/>
+          <circle cx="400" cy="140" r="200" fill="url(#rb-glow)"/>
+          <circle cx="672" cy="380" r="34" fill="#6f9e5b"/>
+          <rect x="652" y="400" width="40" height="46" rx="6" fill="#b2683f"/>
+        </svg>
+
+        <!-- BEFORE: sits on top and is clipped by --pos, so the left part shows -->
+        <svg class="rb-layer rb-before" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Before: a bare grey room">
+          <rect width="800" height="600" fill="#b8b4ab"/>
+          <rect y="420" width="800" height="180" fill="#7f7b73"/>
+          <line x1="0" y1="420" x2="800" y2="420" stroke="#6a665f" stroke-width="4"/>
+          <rect x="520" y="90" width="180" height="230" fill="#58554f"/>
+          <rect x="536" y="106" width="148" height="198" fill="#9aa9ad"/>
+          <line x1="610" y1="106" x2="610" y2="304" stroke="#58554f" stroke-width="6"/>
+          <rect x="90" y="330" width="290" height="100" rx="12" fill="#6e6a63"/>
+          <rect x="80" y="300" width="310" height="52" rx="12" fill="#625e57"/>
+          <line x1="400" y1="0" x2="400" y2="120" stroke="#4f4c46" stroke-width="3"/>
+          <circle cx="400" cy="130" r="14" fill="#4f4c46"/>
+        </svg>
+
+        <span class="rb-tag rb-tag--before" aria-hidden="true">Before</span>
+        <span class="rb-tag rb-tag--after" aria-hidden="true">After</span>
+
+        <div class="rb-handle" id="rb-handle" role="slider" tabindex="0"
+             aria-label="Compare before and after"
+             aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"
+             aria-valuetext="50% before">
+          <span aria-hidden="true">&lsaquo; &rsaquo;</span>
+        </div>
+      </div>
+      <figcaption class="rb-caption">Concept illustration. Replace with licensed photos of one real project, taken from the same spot.</figcaption>
+    </figure>
+  </section>
+
+  <section class="rb-steps" id="steps" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="rb-h2" data-reveal>Three things we change first</h2>
+    <ol class="rb-list">
+      <li data-reveal>
+        <h3>Strip back to the structure</h3>
+        <p>Walls, floors and light are checked before anything is painted.</p>
+      </li>
+      <li data-reveal>
+        <h3>Refinish the floor</h3>
+        <p>Sanded and sealed in one pass, so the room is usable again within days.</p>
+      </li>
+      <li data-reveal>
+        <h3>Layer the light and the furniture</h3>
+        <p>Warm light and a few well-placed pieces change how the room feels.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="rb-cta" id="contact" aria-labelledby="cta-title">
+    <h2 id="cta-title" class="rb-h2" data-reveal>Tell us about the room.</h2>
+    <p class="rb-lead" data-reveal>Placeholder contact line. A real site would link to an enquiry form here.</p>
+  </section>
+</main>
+
+<footer class="rb-footer">
+  <span>Quillfield Renovations is a concept. The project, the figures and the illustrations are invented.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

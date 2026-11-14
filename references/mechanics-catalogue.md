@@ -28,6 +28,9 @@ Twenty-two tested demos. Each one is a different animation mechanic on a made-up
 | 20 | `variable-type-site` | Cursor-driven variable font (weight and width) |
 | 21 | `holo-tilt-site` | Pointer 3D tilt with holographic foil |
 | 22 | `orrery-orbit-site` | Orbital simulation with a camera that follows a planet |
+| 23 | `before-after-renovation-site` | Before and after comparison with a draggable handle |
+| 24 | `pinned-buying-story-site` | Pinned five-step route that draws as the reader scrolls |
+| 25 | `flip-listing-site` | Property cards that flip to show the facts |
 
 ## Details
 
@@ -162,3 +165,21 @@ Twenty-two tested demos. Each one is a different animation mechanic on a made-up
 - **Technique:** a simulated day clock drives every position; the camera eases towards a moving target; an info panel.
 - **Tested:** the overview, and the Earth fly-in with the panel values.
 - **Gaps:** other planets, pause, the slider by hand, keyboard, mobile.
+
+### 23. before-after-renovation-site
+- **Visitor sees:** one room with a draggable handle. Left of the handle is the bare "before", right is the furnished "after". The handle makes one sweep on load and then settles in the middle. Arrow keys, Home and End move it.
+- **Technique:** two SVG illustrations in one frame. The "before" layer sits on top and is clipped with `clip-path: inset(0 calc(100% - var(--pos)) 0 0)`, where `--pos` is set by the pointer or the keyboard. The handle is a `role="slider"` with `aria-valuenow`.
+- **Tested:** drag to 20%, arrow keys, Shift plus arrow, Home and End, reduced motion (no sweep), 375 px (no overflow), console clean.
+- **Gaps:** touch dragging on a real device, a second room, and a real photo pair (the illustrations are invented on purpose).
+
+### 24. pinned-buying-story-site
+- **Visitor sees:** five chapters on the left and one sticky route on the right. As each chapter reaches the middle of the screen, the route line draws to its stop, the stop fills, and the caption changes to that step.
+- **Technique:** `position: sticky` on the stage (the one pinned element), an IntersectionObserver with a band across the middle of the viewport to pick the active chapter, and a stroke drawn with `stroke-dashoffset`. Below 860 px the stage is no longer pinned and sits above the chapters.
+- **Tested:** all five chapters at desktop (step, stops and caption correct), 375 px (no overflow, step updates), reduced motion (caption changes at once).
+- **Gaps:** touch scrolling on a real device, and the route on very short screens.
+
+### 25. flip-listing-site
+- **Visitor sees:** six property cards. Each has an illustrated house and a price on the front. Flipping a card shows the facts on the back, with "Book a viewing". "Show all details" flips all six in a wave and announces the change.
+- **Technique:** `rotateY(180deg)` on a preserve-3d flipper with two backface-hidden faces. The hidden face gets the `inert` attribute, and keyboard focus moves to the visible face's button when a card flips. The wave is a `transition-delay` set from `--i`.
+- **Tested:** one card flip (focus moves, inert states correct), "Show all details" (six cards flipped, status and button label updated), 375 px (no overflow), reduced motion (no turning, a fade instead), console clean.
+- **Gaps:** touch on a real device, and the wave timing on slow machines.

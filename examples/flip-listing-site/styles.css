@@ -1,0 +1,200 @@
+/* Tallow Row Estates (concept). Dusty rose paper, deep rose accent.
+   Display: Italiana. Text: IBM Plex Sans. Each card sets its own --sky, --house and --roof inline. */
+
+:root {
+  --base: #f6e7e3;
+  --surface: #fffaf8;
+  --ink: #2c1a1e;
+  --muted: #6e4f56;
+  --accent: #a8324a;
+  --line: rgb(44 26 30 / 0.14);
+  --display: "Italiana", Georgia, serif;
+  --text: "IBM Plex Sans", system-ui, sans-serif;
+  --t-micro: 160ms;
+  --t-flip: 720ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--base); color: var(--ink); font: 400 17px/1.6 var(--text); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.fl-skip {
+  position: absolute; left: 12px; top: 12px; z-index: 5;
+  background: var(--accent); color: #fff;
+  padding: 8px 12px; border-radius: 6px;
+  transform: translateY(-160%);
+  transition: transform var(--t-micro) var(--ease);
+}
+.fl-skip:focus { transform: none; }
+
+/* ---------- Header and hero ---------- */
+.fl-nav {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px clamp(16px, 4vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.fl-brand { font: 400 1.6rem/1 var(--display); text-decoration: none; letter-spacing: 0.02em; }
+.fl-links { display: flex; gap: 18px; }
+.fl-links a { color: var(--muted); text-decoration: none; }
+.fl-links a:hover { color: var(--ink); }
+
+.fl-hero, .fl-listings, .fl-enquire {
+  max-width: 1200px; margin: 0 auto;
+  padding: clamp(40px, 7vw, 92px) clamp(16px, 4vw, 48px) 0;
+}
+.fl-title { font: 400 clamp(2.6rem, 5.6vw, 4.8rem)/1.02 var(--display); margin: 0 0 20px; max-width: 20ch; }
+.fl-lead { color: var(--muted); max-width: 58ch; margin: 0 0 28px; }
+.fl-h2 { font: 400 clamp(1.9rem, 3.4vw, 2.8rem)/1.1 var(--display); margin: 0; }
+
+/* ---------- Controls ---------- */
+.fl-controls {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding-top: 40px; margin-bottom: 8px;
+}
+.fl-all {
+  font: 600 0.95rem/1 var(--text);
+  background: var(--accent); color: #fff;
+  border: 0; border-radius: 999px; padding: 12px 18px; cursor: pointer;
+  transition: transform var(--t-micro) var(--ease), background-color var(--t-micro) var(--ease);
+}
+.fl-all:hover { transform: translateY(-1px); }
+.fl-all:active { transform: scale(0.98); }
+.fl-status { min-height: 1.6em; color: var(--muted); font-size: 0.95rem; margin: 0 0 20px; }
+
+/* ---------- Grid of cards ---------- */
+.fl-grid {
+  display: grid; gap: clamp(18px, 2.4vw, 28px);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  padding-bottom: 72px;
+}
+
+.fl-listing { perspective: 1200px; }
+
+.fl-flipper {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  transform-style: preserve-3d;
+  transition: transform var(--t-flip) var(--ease);
+}
+.fl-listing.is-flipped .fl-flipper { transform: rotateY(180deg); }
+
+/* The wave: when every card flips at once, each one starts a little after the last */
+.fl-grid.is-wave .fl-flipper { transition-delay: calc(var(--i, 0) * 90ms); }
+
+.fl-face {
+  position: absolute; inset: 0;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: box-shadow 320ms var(--ease);
+}
+.fl-back { transform: rotateY(180deg); }
+
+@media (hover: hover) and (pointer: fine) {
+  .fl-listing:not(.is-flipped):hover .fl-front { box-shadow: 0 22px 44px -26px rgb(44 26 30 / 0.5); }
+}
+
+/* ---------- Front: illustrated house ---------- */
+.fl-art {
+  position: absolute; left: 0; right: 0; top: 0; height: 62%;
+  background: var(--sky);
+}
+.fl-art::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14%;
+  background: rgb(0 0 0 / 0.07);
+}
+.fl-house {
+  position: absolute; left: 18%; right: 18%; top: 42%; bottom: 14%;
+  background: var(--house); border-radius: 4px;
+}
+.fl-roof {
+  position: absolute; left: 12%; right: 12%; top: 16%; height: 30%;
+  background: var(--roof);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+.fl-win {
+  position: absolute; top: 56%; width: 14%; height: 14%;
+  background: rgb(255 255 255 / 0.88); border-radius: 2px;
+}
+.fl-win.w1 { left: 26%; }
+.fl-win.w2 { right: 26%; }
+.fl-door {
+  position: absolute; left: 50%; bottom: 14%; width: 14%; height: 28%;
+  transform: translateX(-50%);
+  background: var(--roof); border-radius: 2px 2px 0 0;
+}
+
+.fl-meta { position: absolute; left: 0; right: 0; top: 62%; bottom: 0; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px; }
+.fl-price { font: 600 1.25rem/1.2 var(--text); margin: 0; color: var(--accent); }
+.fl-addr { font: 400 1.5rem/1.2 var(--display); margin: 0; }
+.fl-sub { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+.fl-flip {
+  position: absolute; right: 16px; bottom: 16px;
+  font: 600 0.9rem/1 var(--text);
+  background: var(--ink); color: var(--surface);
+  border: 0; border-radius: 999px; padding: 10px 14px; cursor: pointer;
+  transition: background-color var(--t-micro) var(--ease), transform var(--t-micro) var(--ease);
+}
+.fl-flip:hover { background: var(--accent); }
+.fl-flip:active { transform: scale(0.97); }
+
+/* ---------- Back: facts ---------- */
+.fl-facts { padding: 22px 22px 0; }
+.fl-facts .fl-addr { margin-bottom: 14px; }
+.fl-facts dl { margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.fl-facts dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.fl-facts dd { margin: 2px 0 0; font-weight: 600; }
+.fl-note { color: var(--muted); font-size: 0.95rem; margin: 16px 0 0; }
+
+.fl-actions {
+  position: absolute; left: 22px; right: 22px; bottom: 20px;
+  display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: space-between;
+}
+.fl-book {
+  font: 600 0.95rem/1 var(--text);
+  background: var(--accent); color: #fff; text-decoration: none;
+  border-radius: 999px; padding: 12px 16px;
+  transition: transform var(--t-micro) var(--ease);
+}
+.fl-book:hover { transform: translateY(-1px); }
+.fl-actions .fl-flip { position: static; background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.fl-actions .fl-flip:hover { background: var(--ink); color: var(--surface); }
+
+/* Inert faces (the hidden side) are set by script.js. Show them clearly if they ever are not. */
+.fl-face[inert] { pointer-events: none; }
+
+/* ---------- Enquire and footer ---------- */
+.fl-enquire { border-top: 1px solid var(--line); padding-bottom: clamp(56px, 8vw, 110px); }
+.fl-footer {
+  max-width: 1200px; margin: 0 auto;
+  padding: 28px clamp(16px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.9rem;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 600px) {
+  .fl-grid { grid-template-columns: minmax(0, 1fr); }
+  .fl-flipper { aspect-ratio: 4 / 5; }
+  .fl-facts dl { grid-template-columns: 1fr; }
+}
+
+/* ---------- Reduced motion: no turning. The card swaps its face with a short fade. ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fl-flipper { transition: none; transform: none !important; }
+  .fl-grid.is-wave .fl-flipper { transition-delay: 0ms; }
+  .fl-back { transform: none; opacity: 0; transition: opacity 200ms linear; }
+  .fl-front { transition: opacity 200ms linear; }
+  .fl-listing.is-flipped .fl-back { opacity: 1; }
+  .fl-listing.is-flipped .fl-front { opacity: 0; }
+  .fl-all, .fl-flip, .fl-book, .fl-face { transition: none; }
+  .fl-all:hover, .fl-book:hover, .fl-flip:active, .fl-all:active { transform: none; }
+}

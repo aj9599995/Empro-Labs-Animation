@@ -1,0 +1,164 @@
+/* Quillfield Renovations (concept). Deep green base, warm apricot accent.
+   Display: Big Shoulders Display. Text: Hanken Grotesk. */
+
+:root {
+  --base: #0e2b24;
+  --ink: #eef5ef;
+  --muted: #a9c2b8;
+  --accent: #ffb86b;
+  --line: rgb(238 245 239 / 0.16);
+  --display: "Big Shoulders Display", "Arial Narrow", sans-serif;
+  --text: "Hanken Grotesk", system-ui, sans-serif;
+  --t-micro: 160ms;
+  --t-base: 420ms;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--base); color: var(--ink); font: 17px/1.6 var(--text); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.rb-skip {
+  position: absolute; left: 12px; top: 12px; z-index: 5;
+  background: var(--accent); color: var(--base);
+  padding: 8px 12px; border-radius: 6px; font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform var(--t-micro) var(--ease);
+}
+.rb-skip:focus { transform: none; }
+
+/* ---------- Header ---------- */
+.rb-nav {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px clamp(16px, 4vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.rb-brand { font: 800 1.4rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.02em; text-decoration: none; }
+.rb-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.rb-links a { color: var(--muted); text-decoration: none; transition: color var(--t-micro) var(--ease); }
+.rb-links a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.rb-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  max-width: 1240px; margin: 0 auto;
+  padding: clamp(40px, 7vw, 96px) clamp(16px, 4vw, 48px);
+}
+.rb-title {
+  font: 800 clamp(2.8rem, 6.4vw, 5.6rem)/0.92 var(--display);
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  overflow-wrap: break-word;
+}
+.rb-lead { color: var(--muted); font-size: 1.12rem; max-width: 50ch; margin: 0 0 24px; }
+.rb-facts { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 8px; }
+.rb-facts li { color: var(--muted); }
+.rb-facts strong { color: var(--accent); font-weight: 700; margin-right: 6px; }
+
+.rb-btn {
+  display: inline-flex; align-items: center;
+  padding: 13px 20px; border-radius: 999px;
+  background: var(--accent); color: var(--base);
+  font-weight: 700; text-decoration: none;
+  transition: transform var(--t-micro) var(--ease);
+}
+.rb-btn:hover { transform: translateY(-1px); }
+.rb-btn:active { transform: scale(0.98); }
+
+/* ---------- Comparison stage (the signature moment) ---------- */
+.rb-figure { margin: 0; }
+.rb-stage {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  --pos: 50%;
+  touch-action: pan-y;          /* vertical scroll still works on a phone */
+  user-select: none;
+  cursor: ew-resize;
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.6);
+}
+.rb-layer { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.rb-before { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+
+.rb-tag {
+  position: absolute; top: 14px;
+  padding: 6px 10px; border-radius: 999px;
+  font: 700 0.78rem/1 var(--text); letter-spacing: 0.06em; text-transform: uppercase;
+  background: rgb(14 43 36 / 0.8); color: var(--ink);
+}
+.rb-tag--before { left: 14px; }
+.rb-tag--after { right: 14px; background: var(--accent); color: var(--base); }
+
+.rb-handle {
+  position: absolute; top: 0; bottom: 0;
+  left: var(--pos);
+  width: 44px; margin-left: -22px;
+  display: grid; place-items: center;
+  outline-offset: -3px;
+}
+.rb-handle::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 3px; margin-left: -1.5px;
+  background: var(--accent);
+}
+.rb-handle span {
+  position: relative;
+  width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--accent); color: var(--base);
+  font: 800 1rem/1 var(--text);
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.35);
+}
+
+.rb-caption { font-size: 0.86rem; color: var(--muted); margin-top: 12px; }
+
+/* ---------- Sections ---------- */
+.rb-steps, .rb-cta {
+  max-width: 1240px; margin: 0 auto;
+  padding: clamp(56px, 8vw, 110px) clamp(16px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+}
+.rb-h2 { font: 800 clamp(2.2rem, 4.4vw, 3.6rem)/0.95 var(--display); text-transform: uppercase; margin: 0 0 28px; }
+.rb-list {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.rb-list li { border-top: 2px solid var(--accent); padding-top: 16px; }
+.rb-list h3 { font: 700 1.25rem/1.25 var(--text); margin: 0 0 8px; }
+.rb-list p { margin: 0; color: var(--muted); }
+.rb-cta .rb-lead { margin-bottom: 0; }
+
+.rb-footer {
+  max-width: 1240px; margin: 0 auto;
+  padding: 28px clamp(16px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+  color: var(--muted); font-size: 0.9rem;
+}
+
+/* ---------- Reveals ---------- */
+.js [data-reveal] {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity var(--t-base) var(--ease), transform var(--t-base) var(--ease);
+}
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 820px) {
+  .rb-hero { grid-template-columns: minmax(0, 1fr); }
+  .rb-stage { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { transform: none; transition-property: opacity; }
+  .rb-btn, .rb-links a, .rb-skip { transition: none; }
+  .rb-btn:hover, .rb-btn:active { transform: none; }
+}

@@ -37,7 +37,7 @@ Then type `/` in Claude Code and choose **empro-labs-animations**. Add your requ
 | File | What it gives Claude |
 |------|----------------------|
 | `references/thinking-process.md` | How to invent a mechanic: primitive, purpose and input, a novelty check and a sketch |
-| `references/mechanic-library.md` | 22 built families and about 30 tested ideas not yet built, each with a technique and a fallback |
+| `references/mechanic-library.md` | 25 built families and 26 tested ideas not yet built, each with a technique and a fallback |
 | `references/used-designs.md` | Every page built so far, with its font, palette and family, so new pages do not repeat |
 | `references/design-language.md` | Type pairing, colour, layout and copy rules, and the patterns to avoid |
 | `references/technique-recipes.md` | 22 working building blocks: tilt, FLIP, particles, physics, WebGL, audio, scroll, page turn and more |
@@ -81,6 +81,9 @@ Open http://localhost:8000 and choose a folder, for example `layered-stack-hyper
 | 20 | `variable-type-site` | Cursor-driven variable font |
 | 21 | `holo-tilt-site` | Pointer 3D tilt with holographic foil |
 | 22 | `orrery-orbit-site` | Orbital simulation with a camera that follows |
+| 23 | `before-after-renovation-site` | Before and after slider with an intro sweep (clip-path) |
+| 24 | `pinned-buying-story-site` | Pinned route: a five-step story drawn as you scroll |
+| 25 | `flip-listing-site` | Listing cards that flip, with a wave to flip them all |
 
 ## Known issues
 
@@ -88,6 +91,7 @@ Open http://localhost:8000 and choose a folder, for example `layered-stack-hyper
 - `variable-type-site` overflows horizontally by 5 px on a 375 px screen.
 - Most demos were tested on desktop only. Check touch, keyboard and reduced motion before you ship one.
 - The demos are concepts. Replace the placeholder copy, colours and fonts before using any of them on a live site.
+- The three newest demos (23 to 25) were checked with scripted pointer, keyboard and reduced-motion tests. They have not been tried on a real touch device.
 
 ## Layout
 
@@ -109,7 +113,7 @@ Empro-Labs-Animation/
 │   └── layered-stack-hyperframe.md
 ├── templates/
 │   └── starter-site/                 # index.html, styles.css, script.js
-└── examples/                         # 22 runnable demos, including the layered stack
+└── examples/                         # 25 runnable demos, including the layered stack
 ```
 
 ## License

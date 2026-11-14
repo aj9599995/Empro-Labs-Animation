@@ -22,7 +22,7 @@ If the request above is empty, ask one question: which mechanic or section shoul
 |------|-----------|
 | `references/thinking-process.md` | Always, before choosing a mechanic. How to invent one and justify it |
 | `references/used-designs.md` | Always. Families, fonts and palettes already used, so you do not repeat them |
-| `references/mechanic-library.md` | Always. 22 built families and about 30 tested ideas not yet built |
+| `references/mechanic-library.md` | Always. 25 built families and about 26 tested ideas not yet built |
 | `references/design-language.md` | Step 3. Type pairing, palette, layout and copy rules, and what to avoid |
 | `references/technique-recipes.md` | Step 4. Working building blocks: tilt, FLIP, particles, physics, WebGL, audio and more |
 | `references/real-estate-applications.md` | When the brief is for a real estate or property section |
@@ -54,7 +54,7 @@ If the request above is empty, ask one question: which mechanic or section shoul
 
 ## Examples
 
-`examples/` holds 22 runnable demos, including the neutral layered-stack example. To try them, run `python -m http.server 8000` inside `examples/`, then open a folder, for example http://localhost:8000/layered-stack-hyperframe/.
+`examples/` holds 25 runnable demos, including the neutral layered-stack example. To try them, run `python -m http.server 8000` inside `examples/`, then open a folder, for example http://localhost:8000/layered-stack-hyperframe/.
 
 ## Templates
 

@@ -4,7 +4,7 @@ Two parts. **Built** entries have a runnable example in `examples/`. **Not built
 
 Each entry lists: the primitive (what it simulates), the input, the technique, the fallback, and the real estate use.
 
-## Part 1: Built (22 examples, including the layered stack)
+## Part 1: Built (25 examples, including the layered stack)
 
 | # | Family | Example folder | Input | Technique |
 |---|--------|----------------|-------|-----------|
@@ -30,8 +30,11 @@ Each entry lists: the primitive (what it simulates), the input, the technique, t
 | 20 | Cursor-driven variable font | `variable-type-site` | Pointer, sliders | Font variation axes from distance |
 | 21 | Pointer 3D tilt with foil | `holo-tilt-site` | Pointer, focus | Pointer to rotation, glare and foil variables |
 | 22 | Orbital camera follow | `orrery-orbit-site` | Click, slider, keys | Simulated clock, eased camera target |
+| 23 | Before and after mask | `before-after-renovation-site` | Drag, keys | `clip-path` on a top layer, intro sweep |
+| 24 | Pinned scrollytelling route | `pinned-buying-story-site` | Scroll | Sticky stage, active chapter, stroke drawn by step |
+| 25 | Flip cards with a wave | `flip-listing-site` | Click, keys | 3D flip, `inert` on the hidden face, staggered wave |
 
-## Part 2: Not built yet
+## Part 2: Ideas (Q, G and U are now built)
 
 ### Interaction and cursor
 
@@ -49,7 +52,7 @@ Each entry lists: the primitive (what it simulates), the input, the technique, t
 
 **F. Parallax depth layers.** Primitive: depth. Input: scroll. Technique: three or four layers move at different speeds (`transform: translate3d`) inside one rAF loop, or with `animation-timeline: scroll()`. Fallback: static layers. Real estate: hero photograph over a skyline. Keep the movement small (under 40 px) and not on text.
 
-**G. Pinned scrollytelling.** Primitive: chapters. Input: scroll. Technique: a `position: sticky` stage, with an IntersectionObserver marking the active chapter, which swaps its content. Fallback: the chapters stack normally. Real estate: "How buying works" in five steps. Maximum two pins per page.
+**G. Pinned scrollytelling.** *Built: `pinned-buying-story-site`.* Primitive: chapters. Input: scroll. Technique: a `position: sticky` stage, with an IntersectionObserver marking the active chapter, which swaps its content. Fallback: the chapters stack normally. Real estate: "How buying works" in five steps. Maximum two pins per page.
 
 **H. Horizontal pinned track.** Primitive: panning. Input: scroll. Technique: a sticky container; `translateX` mapped to scroll progress. Fallback: a horizontal scrollbar. Real estate: a neighbourhood photo strip. Desktop only.
 
@@ -73,7 +76,7 @@ Each entry lists: the primitive (what it simulates), the input, the technique, t
 
 ### Shapes and images
 
-**Q. Before and after slider.** Primitive: mask. Input: drag, keys. Technique: two images, the top one clipped with `clip-path: inset(0 calc(100% - var(--pos)) 0 0)`. Fallback: two images side by side. Real estate: renovation or staging. Both images need the same crop.
+**Q. Before and after slider.** *Built: `before-after-renovation-site`.* Primitive: mask. Input: drag, keys. Technique: two images, the top one clipped with `clip-path: inset(0 calc(100% - var(--pos)) 0 0)`. Fallback: two images side by side. Real estate: renovation or staging. Both images need the same crop.
 
 **R. Magnifier lens.** Primitive: lens. Input: pointer. Technique: a circle showing a scaled copy of the image under the pointer (`transform` and `background-position`). Fallback: none needed. Real estate: zoom into a floor plan detail or a material sample.
 
@@ -81,7 +84,7 @@ Each entry lists: the primitive (what it simulates), the input, the technique, t
 
 **T. Image distortion on hover.** Primitive: heat shimmer. Input: pointer. Technique: an SVG `feDisplacementMap` with an animated scale, or a small WebGL pass. Fallback: plain image. Real estate: a hover on a gallery image. Costly; keep to one image.
 
-**U. Flip card.** Primitive: card. Input: hover, click, tap. Technique: `rotateY(180deg)` with `backface-visibility: hidden` on two faces. Fallback: the front face with a details link. Real estate: a listing card whose back shows the key facts.
+**U. Flip card.** *Built: `flip-listing-site`.* Primitive: card. Input: hover, click, tap. Technique: `rotateY(180deg)` with `backface-visibility: hidden` on two faces. Fallback: the front face with a details link. Real estate: a listing card whose back shows the key facts.
 
 **V. Cover-flow carousel.** Primitive: carousel in depth. Input: drag, keys. Technique: items placed around `rotateY` with `translateZ`, the nearest one fronted. Fallback: a horizontal list. Real estate: a photo set. Similar to 2, so change the input or the look.
 

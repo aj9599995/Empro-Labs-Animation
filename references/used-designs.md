@@ -32,19 +32,23 @@ Rules before you build:
 | 20 | `variable-type-site` | Stretch & Co. | Variable font proximity | Anybody (Inter) | #f5e63c yellow, #12100c ink | 8019 |
 | 21 | `holo-tilt-site` | Hatchling Cards | Pointer 3D tilt with foil | Lilita One | #1b1030 purple, #ffffff ink, foil colours | 8020 |
 | 22 | `orrery-orbit-site` | The Orrery | Orbital camera follow | Syne (Manrope) | #070b1a navy, #eef2ff ink | 8021 |
+| 23 | `before-after-renovation-site` | Quillfield Renovations | Before and after mask with intro sweep | Big Shoulders Display (Hanken Grotesk) | #0e2b24 deep green, #eef5ef ink, #ffb86b apricot | served from `examples/` |
+| 24 | `pinned-buying-story-site` | Marrow & Co. Property | Pinned scrollytelling route | Sora (Source Sans 3) | #f7f5f0 off-white, #1b1b1f ink, #2f5bff electric blue | served from `examples/` |
+| 25 | `flip-listing-site` | Tallow Row Estates | Flip cards with a wave | Italiana (IBM Plex Sans) | #f6e7e3 dusty rose, #2c1a1e ink, #a8324a deep rose | served from `examples/` |
 
 ## Repeats to watch
 
 - **Fraunces** is the display font of rows 2 and 15.
 - **Syne** is the display font of rows 4 and 22.
-- **Dark navy or indigo** backgrounds appear in rows 4, 15, 21 and 22.
-- **Cream or paper** backgrounds appear in rows 1, 3, 5, 6, 10, 11, 13, 14, 16, 17 and 19.
+- **Dark navy, indigo or deep green** backgrounds appear in rows 4, 15, 21, 22 and 23.
+- **Cream or paper** backgrounds appear in rows 1, 3, 5, 6, 10, 11, 13, 14, 16, 17, 19 and 25.
+- **Electric blue, rose and apricot** accents are each used once, in rows 24, 25 and 23.
 
 Next pages should favour a display font not listed above, and a background family that is under-used (for example a saturated colour field, or a deep green).
 
 ## Families not yet used
 
-Use `mechanic-library.md` Part 2 for these. They are candidates for the next page: magnetic button, ripple, parallax depth layers, pinned scrollytelling, horizontal pinned track, bento reveal, clip-path wipe, odometer count-up, stroke icon draw, before and after slider, magnifier lens, flip card, cover-flow carousel, calendar slot select, area map flyover, shared-element transition.
+Use `mechanic-library.md` Part 2 for these. They are candidates for the next page: magnetic button, ripple, parallax depth layers, horizontal pinned track, bento reveal, clip-path wipe, odometer count-up, stroke icon draw, magnifier lens, cover-flow carousel, calendar slot select, area map flyover, shared-element transition. Pinned scrollytelling, before and after, and flip cards are built (rows 23 to 25).
 
 ## How to add a row
 
