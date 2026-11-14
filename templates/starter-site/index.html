@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Starter Concept | Placeholder Brand</title>
+<meta name="description" content="Starter page for a new animation concept. Replace the copy, palette, fonts and signature moment.">
+<!-- Fonts: choose a display font that is not in references/used-designs.md, then load it here.
+     Example: <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&display=swap" rel="stylesheet"> -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="sx-skip" href="#main">Skip to content</a>
+
+<header class="sx-nav">
+  <a class="sx-brand" href="#top">Placeholder Brand</a>
+  <nav class="sx-links" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="main">
+  <!-- HERO: the layout reads correctly with no motion. The stage is the one signature moment. -->
+  <section class="sx-hero" id="top" aria-labelledby="sx-title">
+    <div class="sx-copy">
+      <h1 id="sx-title" class="sx-title">Placeholder headline for the concept.</h1>
+      <p class="sx-lead">Placeholder lead sentence that says what the visitor gets, in plain words.</p>
+      <div class="sx-actions">
+        <a class="sx-btn sx-btn--solid" href="#contact">Primary action</a>
+        <a class="sx-btn" href="#work">Secondary action</a>
+      </div>
+    </div>
+
+    <div class="sx-stage" id="stage" aria-hidden="true">
+      <div class="sx-card" id="stage-card">
+        <div class="sx-card__face">Signature moment</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sx-section" id="about" aria-labelledby="about-title">
+    <h2 id="about-title" class="sx-h2" data-reveal>About the concept</h2>
+    <p class="sx-body" data-reveal>Placeholder paragraph. Two or three sentences that explain what this page shows and why the motion matters.</p>
+  </section>
+
+  <section class="sx-section" id="work" aria-labelledby="work-title">
+    <h2 id="work-title" class="sx-h2" data-reveal>Three things</h2>
+    <ol class="sx-grid">
+      <li class="sx-item" data-reveal><h3>Placeholder item</h3><p>Placeholder description.</p></li>
+      <li class="sx-item" data-reveal><h3>Placeholder item</h3><p>Placeholder description.</p></li>
+      <li class="sx-item" data-reveal><h3>Placeholder item</h3><p>Placeholder description.</p></li>
+    </ol>
+  </section>
+
+  <section class="sx-section sx-cta" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="sx-h2" data-reveal>Placeholder call to action.</h2>
+    <a class="sx-btn sx-btn--solid" href="#top" data-reveal>Start</a>
+  </section>
+</main>
+
+<footer class="sx-footer">
+  <span>Placeholder Brand is a concept. All content is invented.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

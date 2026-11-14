@@ -1,0 +1,131 @@
+/* Starter site. Replace the palette and fonts for each new concept (see references/design-language.md).
+   Every colour, font and timing is a token here, so a new concept changes only this block. */
+
+:root {
+  --paper: #f4f1ea;
+  --ink: #17161a;
+  --muted: #5d5a60;
+  --accent: #d9542b;
+  --line: rgb(23 22 26 / 0.14);
+
+  --display: "Georgia", "Times New Roman", serif;   /* swap for a font not used before */
+  --text: "Helvetica Neue", Arial, sans-serif;     /* swap for the text font */
+
+  --t-micro: 160ms;
+  --t-base: 380ms;
+  --t-signature: 900ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.6 var(--text);
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.sx-skip {
+  position: absolute; left: 12px; top: 12px;
+  background: var(--ink); color: var(--paper);
+  padding: 8px 12px; border-radius: 6px;
+  transform: translateY(-160%);
+  transition: transform var(--t-micro) var(--ease-out);
+}
+.sx-skip:focus { transform: none; }
+
+/* ---------- Header ---------- */
+.sx-nav {
+  display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  padding: 18px clamp(16px, 4vw, 48px);
+  border-bottom: 1px solid var(--line);
+}
+.sx-brand { font: 600 1rem var(--text); text-decoration: none; }
+.sx-links { display: flex; gap: 18px; flex-wrap: wrap; }
+.sx-links a { text-decoration: none; color: var(--muted); transition: color var(--t-micro) var(--ease-out); }
+.sx-links a:hover { color: var(--ink); }
+
+/* ---------- Hero ---------- */
+.sx-hero {
+  display: grid; gap: 40px; align-items: center;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  padding: clamp(40px, 8vw, 110px) clamp(16px, 4vw, 48px);
+  max-width: 1200px; margin: 0 auto;
+}
+.sx-title {
+  font: 600 clamp(2.4rem, 5.4vw, 4.6rem)/1.02 var(--display);
+  letter-spacing: -0.02em; margin: 0 0 20px;
+  overflow-wrap: break-word;
+}
+.sx-lead { font-size: 1.125rem; color: var(--muted); max-width: 52ch; margin: 0 0 28px; }
+.sx-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.sx-btn {
+  display: inline-flex; align-items: center;
+  padding: 12px 18px; border-radius: 999px;
+  border: 1px solid var(--ink); text-decoration: none; font-weight: 600;
+  transition: transform var(--t-micro) var(--ease-out), background-color var(--t-micro) var(--ease-out);
+}
+.sx-btn:hover { transform: translateY(-1px); }
+.sx-btn:active { transform: scale(0.98); }
+.sx-btn--solid { background: var(--ink); color: var(--paper); }
+.sx-btn--solid:hover { background: var(--accent); border-color: var(--accent); }
+
+/* ---------- Signature stage ---------- */
+.sx-stage {
+  display: grid; place-items: center;
+  aspect-ratio: 1 / 1; width: 100%; max-width: 460px; justify-self: center;
+  perspective: 1000px;
+}
+.sx-card {
+  width: 70%; aspect-ratio: 3 / 4;
+  background: var(--ink); color: var(--paper);
+  border-radius: 18px;
+  display: grid; place-items: center;
+  transform-style: preserve-3d;
+  transition: transform var(--t-base) var(--ease-out);
+  will-change: transform;
+}
+.sx-card__face { font: 600 1.1rem var(--text); letter-spacing: 0.02em; }
+
+/* ---------- Sections and reveals ---------- */
+.sx-section { max-width: 1200px; margin: 0 auto; padding: clamp(56px, 9vw, 120px) clamp(16px, 4vw, 48px); border-top: 1px solid var(--line); }
+.sx-h2 { font: 600 clamp(1.8rem, 3.6vw, 2.8rem)/1.1 var(--display); margin: 0 0 16px; letter-spacing: -0.01em; }
+.sx-body { max-width: 62ch; color: var(--muted); font-size: 1.05rem; }
+.sx-grid { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.sx-item { border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.sx-item h3 { margin: 0 0 8px; font: 600 1.1rem var(--text); }
+.sx-item p { margin: 0; color: var(--muted); }
+
+.sx-cta { text-align: left; }
+
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+}
+.js [data-reveal].is-in { opacity: 1; transform: none; }
+
+.sx-footer {
+  max-width: 1200px; margin: 0 auto; padding: 28px clamp(16px, 4vw, 48px);
+  border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem;
+}
+
+/* ---------- Phones ---------- */
+@media (max-width: 760px) {
+  .sx-hero { grid-template-columns: minmax(0, 1fr); }
+  .sx-stage { max-width: 320px; }
+  .sx-links { gap: 12px; }
+}
+
+/* ---------- Reduced motion: state stays, movement goes ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { transform: none; transition-property: opacity; }
+  .sx-card { transition: none; }
+  .sx-btn:hover, .sx-btn:active { transform: none; }
+}

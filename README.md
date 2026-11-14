@@ -1,10 +1,10 @@
 # Empro Labs Animation
 
-**A Claude Code skill that builds distinct web animation mechanics, with 22 tested demos.**
+**A Claude Code skill that designs and builds new, premium web animation mechanics.**
+
+It comes with a knowledge base, not only examples. Claude uses the mechanic library, the design language, the technique recipes and the quality bar to invent new animations, so it is not limited to the 22 demos in the repo.
 
 Each demo is a small, self-contained page (HTML, CSS and JavaScript, no build step) that shows one animation mechanic on a made-up brand. Use them to pick a style for a real estate or other business site, or to ask Claude to build a new one.
-
-The skill began as a conversation about a layered 3D hover effect on a real estate site. It then built a range of other mechanics, which are kept here as examples.
 
 ## Install in one line
 
@@ -22,12 +22,31 @@ $d = "$env:USERPROFILE\.claude\skills\empro-labs-animations"; if (Test-Path "$d\
 d="$HOME/.claude/skills/empro-labs-animations"; if [ -d "$d/.git" ]; then git -C "$d" pull --ff-only; else git clone https://github.com/aj9599995/Empro-Labs-Animation "$d"; fi && echo "Installed. Type /empro-labs-animations in Claude Code."
 ```
 
-Then type `/` in Claude Code and choose **empro-labs-animations**. Add your request after it, for example `/empro-labs-animations build a split-flap board for an open-house schedule`.
+Then type `/` in Claude Code and choose **empro-labs-animations**. Add your request after it, for example:
+
+- `/empro-labs-animations build a before and after renovation slider for a property page`
+- `/empro-labs-animations make a premium neighbourhood map flyover for a real estate site`
 
 - If the command does not appear, run `/reload-skills`, or restart Claude Code.
 - Works in Claude Code: the terminal CLI, the desktop app and the IDE extensions. Other chat apps do not read this folder.
 - **Update:** paste the same line again.
 - **Remove:** delete the folder `~/.claude/skills/empro-labs-animations`.
+
+## What the skill knows
+
+| File | What it gives Claude |
+|------|----------------------|
+| `references/thinking-process.md` | How to invent a mechanic: primitive, purpose and input, a novelty check and a sketch |
+| `references/mechanic-library.md` | 22 built families and about 30 tested ideas not yet built, each with a technique and a fallback |
+| `references/used-designs.md` | Every page built so far, with its font, palette and family, so new pages do not repeat |
+| `references/design-language.md` | Type pairing, colour, layout and copy rules, and the patterns to avoid |
+| `references/technique-recipes.md` | 22 working building blocks: tilt, FLIP, particles, physics, WebGL, audio, scroll, page turn and more |
+| `references/real-estate-applications.md` | Which mechanic suits which property section, and what to check |
+| `references/premium-quality-bar.md` | The must and should list, the performance budget and the report template |
+| `references/build-and-test-process.md` | Naming rules, the test checklist, and the bugs seen while building |
+| `references/mechanics-catalogue.md` | Details of each example: what was tested and what was not |
+| `references/layered-stack-hyperframe.md` | The layered 3D hover stack, described in general terms |
+| `templates/starter-site/` | A starting page with layout, tokens, reveals, tilt and reduced motion already wired in |
 
 ## Try the examples
 
@@ -73,15 +92,24 @@ Open http://localhost:8000 and choose a folder, for example `layered-stack-hyper
 ## Layout
 
 ```
-empro-labs-animations/
-├── SKILL.md                         # the skill (instructions for Claude)
-├── README.md                        # this file
-├── LICENSE                          # MIT
-├── references/
-│   ├── mechanics-catalogue.md       # the 22 mechanics, with what was tested and the gaps
-│   ├── layered-stack-hyperframe.md  # how the layered 3D stack works, in general terms
-│   └── build-and-test-process.md    # build steps, test checklist, lessons learned
-└── examples/                        # 22 runnable demos (HTML, CSS, JavaScript)
+Empro-Labs-Animation/
+├── SKILL.md                          # the skill (instructions for Claude)
+├── README.md                         # this file
+├── LICENSE                           # MIT
+├── references/                       # the knowledge base
+│   ├── thinking-process.md
+│   ├── mechanic-library.md
+│   ├── used-designs.md
+│   ├── design-language.md
+│   ├── technique-recipes.md
+│   ├── real-estate-applications.md
+│   ├── premium-quality-bar.md
+│   ├── build-and-test-process.md
+│   ├── mechanics-catalogue.md
+│   └── layered-stack-hyperframe.md
+├── templates/
+│   └── starter-site/                 # index.html, styles.css, script.js
+└── examples/                         # 22 runnable demos, including the layered stack
 ```
 
 ## License
