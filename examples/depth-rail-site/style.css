@@ -1,0 +1,105 @@
+:root {
+  --paper: #f2efe6;
+  --ink: #111111;
+  --red: #e63312;
+  --sans: "Space Grotesk", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+*,*::before,*::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+.mono { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin: 0; }
+
+.top {
+  position: fixed; inset: 0 0 auto 0; z-index: 20;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px clamp(18px,4vw,44px);
+  mix-blend-mode: normal;
+}
+.brand { font-weight: 500; font-size: 18px; text-decoration: none; color: var(--ink); }
+.brand b { color: var(--red); }
+
+/* scroll distance that drives the fly-through */
+.track { height: 700vh; position: relative; }
+.viewport {
+  position: sticky; top: 0;
+  height: 100vh; height: 100svh;
+  overflow: hidden;
+  perspective: 900px;
+  perspective-origin: var(--px, 50%) var(--py, 50%);
+  background:
+    linear-gradient(var(--paper), var(--paper));
+}
+/* faint tracks converging on the horizon */
+.viewport::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, rgba(17,17,17,.06) 0 1px, transparent 1px 90px);
+  mask-image: linear-gradient(transparent, #000 60%, transparent);
+  -webkit-mask-image: linear-gradient(transparent, #000 60%, transparent);
+}
+.world { position: absolute; inset: 0; transform-style: preserve-3d; }
+
+.station {
+  position: absolute; left: 50%; top: 50%;
+  width: min(560px, 84vw);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+.station::before {
+  content: attr(data-n);
+  position: absolute; left: 50%; top: 0;
+  transform: translate(-50%, -62%) translateZ(-160px);
+  font: 700 clamp(220px, 40vw, 520px)/1 var(--sans);
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(17,17,17,.18);
+  pointer-events: none;
+  z-index: -1;
+}
+.card {
+  position: relative;
+  background: #fffdf7;
+  border: 2px solid var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  padding: clamp(22px, 3vw, 36px);
+}
+.card h1, .card h2 { margin: 12px 0 10px; font-weight: 700; letter-spacing: -.035em; line-height: .95; }
+.card h1 { font-size: clamp(40px, 6vw, 76px); }
+.card h2 { font-size: clamp(56px, 9vw, 120px); }
+.card p:last-child { margin: 0; font-size: 17px; line-height: 1.5; max-width: 38ch; }
+.card .mono { color: var(--red); }
+.card.final { background: var(--red); color: #fff; }
+.card.final .mono { color: #fff; }
+
+.rail {
+  position: absolute; right: clamp(14px,3vw,36px); top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 14px; z-index: 5;
+}
+.rail button {
+  width: 14px; height: 14px; padding: 0; border: 2px solid var(--ink); border-radius: 50%;
+  background: transparent; cursor: pointer; position: relative;
+  transition: background-color .25s, transform .25s;
+}
+.rail button.on { background: var(--red); border-color: var(--red); transform: scale(1.35); }
+.rail button:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+.rail button span {
+  position: absolute; right: 26px; top: 50%; transform: translateY(-50%);
+  font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+  opacity: 0; transition: opacity .2s; pointer-events: none;
+}
+.rail button:hover span, .rail button:focus-visible span { opacity: 1; }
+
+.hint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 5; transition: opacity .4s; }
+
+@media (max-width: 700px) {
+  .rail button span { display: none; }
+  .card { box-shadow: 6px 6px 0 var(--ink); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

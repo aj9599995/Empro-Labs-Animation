@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Garden Almanac | A year, one scroll</title>
+<meta name="description" content="A concept site for a gardening almanac. Animated entirely with CSS scroll-driven animations: no JavaScript.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,800;1,500&family=Karla:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress" aria-hidden="true"></div>
+<div class="dial" aria-hidden="true"><i></i></div>
+
+<header class="top">
+  <a class="brand" href="#">The Garden <i>Almanac</i></a>
+  <span class="note">Concept · pure CSS, no JavaScript</span>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="kick reveal">A year in the garden</p>
+    <h1 class="reveal d1">Twelve months,<br><i>one scroll.</i></h1>
+    <p class="lead reveal d2">What to sow, what to prune, and when to leave it alone. Scroll slowly. The cards stack as the seasons turn.</p>
+  </section>
+
+  <section class="months">
+    <div class="slot" style="--i:0;--bg:#cfe3c8"><article class="card"><p class="m">01 · January</p><h2>Plan &amp; rest</h2><p>Order seed, clean your tools, and sketch next year's beds while the ground sleeps.</p></article></div>
+    <div class="slot" style="--i:1;--bg:#f3d9c6"><article class="card"><p class="m">03 · March</p><h2>Start indoors</h2><p>Tomatoes, peppers and herbs go in trays on the sunniest sill you have.</p></article></div>
+    <div class="slot" style="--i:2;--bg:#f2e6a8"><article class="card"><p class="m">05 · May</p><h2>Plant out</h2><p>Frost is gone. Harden the seedlings off for a week, then give them the bed.</p></article></div>
+    <div class="slot" style="--i:3;--bg:#f4c2c2"><article class="card"><p class="m">07 · July</p><h2>Water deep</h2><p>A long soak twice a week beats a daily sprinkle. Mulch to hold it in.</p></article></div>
+    <div class="slot" style="--i:4;--bg:#e8b27d"><article class="card"><p class="m">09 · September</p><h2>Harvest &amp; save</h2><p>Pick it all, dry the beans, and save seed from your best plants.</p></article></div>
+    <div class="slot" style="--i:5;--bg:#b9c7d8"><article class="card"><p class="m">11 · November</p><h2>Tuck it in</h2><p>Spread compost, cover the beds, and put the hose away. See you in January.</p></article></div>
+  </section>
+
+  <section class="outro">
+    <h2 class="reveal">Slow gardens grow best.</h2>
+    <p class="reveal d1">The Garden Almanac is a concept page built to show CSS scroll-driven animation. Not a real publication.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,2 @@
+# Store text files with LF so shell one-liners and scripts work on every machine
+* text=auto eol=lf

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crumb &amp; Co. Ledger | A bakery dashboard</title>
+<meta name="description" content="A concept dashboard for a bakery. Charts morph between Today, Month and Year; numbers count up; hover the line to read it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div><h1>Crumb <i>&amp;</i> Co. <span>Ledger</span></h1><p class="sub">Concept dashboard · made-up numbers</p></div>
+  <div class="seg" id="seg" role="tablist" aria-label="Time range">
+    <button class="on" data-r="today" role="tab">Today</button>
+    <button data-r="month" role="tab">Month</button>
+    <button data-r="year" role="tab">Year</button>
+  </div>
+</header>
+
+<main class="grid">
+  <section class="kpis">
+    <article class="kpi"><p>Revenue</p><b id="k0">$0</b><span id="d0" class="delta"></span></article>
+    <article class="kpi"><p>Orders</p><b id="k1">0</b><span id="d1" class="delta"></span></article>
+    <article class="kpi"><p>Avg. ticket</p><b id="k2">$0.00</b><span id="d2" class="delta"></span></article>
+  </section>
+
+  <section class="card wide">
+    <div class="ch"><h2>Revenue</h2><span class="dim" id="rl"></span></div>
+    <div class="chart" id="chart">
+      <svg viewBox="0 0 800 300" preserveAspectRatio="none" id="svg" role="img" aria-label="Revenue over time">
+        <defs><linearGradient id="fade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#ff7a59" stop-opacity=".45"/><stop offset="1" stop-color="#ff7a59" stop-opacity="0"/></linearGradient></defs>
+        <g id="grid"></g>
+        <path id="area" fill="url(#fade)"/>
+        <path id="line" fill="none" stroke="#ff7a59" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        <line id="cross" y1="0" y2="300" stroke="#10213a" stroke-opacity=".35" stroke-dasharray="4 5" vector-effect="non-scaling-stroke" opacity="0"/>
+      </svg>
+      <span class="dot" id="dot"></span>
+      <div class="tip" id="tip"></div>
+      <div class="ylab" id="ylab"></div>
+    </div>
+    <div class="xlab" id="xlab"></div>
+  </section>
+
+  <section class="card">
+    <div class="ch"><h2>Top sellers</h2><span class="dim">units</span></div>
+    <div class="bars" id="bars"></div>
+  </section>
+
+  <section class="card">
+    <div class="ch"><h2>Sales mix</h2></div>
+    <div class="donutwrap">
+      <svg viewBox="0 0 200 200" class="donut" role="img" aria-label="Sales mix">
+        <circle cx="100" cy="100" r="70" fill="none" stroke="#eef1f6" stroke-width="26"/>
+        <g id="segs" transform="rotate(-90 100 100)"></g>
+        <text x="100" y="104" text-anchor="middle" id="dtxt">100%</text>
+      </svg>
+      <ul class="legend" id="legend"></ul>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

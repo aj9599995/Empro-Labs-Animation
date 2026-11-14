@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Murmur Sound Studio | Listen, make, play</title>
+<meta name="description" content="A concept site for a sound studio. A field of particles forms each word and scatters away from your cursor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">murmur<span>.</span></a>
+  <nav><a href="#work">Work</a><a href="#book">Book</a></nav>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <canvas id="field" aria-hidden="true"></canvas>
+    <h1 class="sr">Murmur Sound Studio: <span id="srword">Listen</span></h1>
+    <div class="under">
+      <p class="tag" id="tag">We record rooms the way they actually sound.</p>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Words"></div>
+      <p class="hint">Move your cursor through the sound</p>
+    </div>
+  </section>
+
+  <section class="marquee" aria-hidden="true">
+    <div class="belt"><span>Field recording</span><span>Mixing</span><span>Foley</span><span>Podcasts</span><span>Scoring</span><span>Mastering</span><span>Field recording</span><span>Mixing</span><span>Foley</span><span>Podcasts</span><span>Scoring</span><span>Mastering</span></div>
+  </section>
+
+  <section class="work" id="work">
+    <h2>Three rooms, one ear.</h2>
+    <div class="cols">
+      <article><b>01</b><h3>Room A</h3><p>Live room with 5 metres of ceiling. Good for drums and choirs.</p></article>
+      <article><b>02</b><h3>Room B</h3><p>Dead booth for voice. Podcasts, narration and ADR.</p></article>
+      <article><b>03</b><h3>The Roof</h3><p>Open-air kit for field work. Rain optional.</p></article>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <h2>Got a sound in your head?</h2>
+    <a class="btn" href="mailto:hello@example.com">Book a session</a>
+    <p class="small">Murmur is a concept brand made to show a particle animation. Not a real studio.</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

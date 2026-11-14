@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Layered Stack Demo | Placeholder Brand</title>
+<meta name="description" content="A placeholder page that shows the layered stack hover mechanic. Replace the copy and colours with your own.">
+<meta name="theme-color" content="#dcddd8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400..700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="nav__brand" href="#top" aria-label="Placeholder Brand home">Placeholder Brand</a>
+  <nav class="nav__links" aria-label="Main">
+    <a href="#services">Services</a>
+    <a href="#proof">Proof</a>
+    <a href="#check">Check it</a>
+    <a href="#how">How it works</a>
+  </nav>
+  <a class="btn btn--ink btn--sm" href="#contact">Get in touch</a>
+</header>
+
+<main id="main">
+
+  <!-- HERO: four layers. Hover or focus a layer to fan the stack and swap the headline. Click to jump to its section. -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__copy">
+      <p class="eyebrow">Placeholder category line</p>
+
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__lead">Four layers that</span>
+        <span class="hero__word-wrap">
+          <span class="hero__word" id="word">work for you.</span>
+          <span class="hero__word hero__word--measure" id="meas" aria-hidden="true"></span>
+        </span>
+      </h1>
+
+      <span class="hero__bar" id="bar" aria-hidden="true"></span>
+      <p class="hero__ttl" id="ttl">Four layers, one stack</p>
+      <p class="hero__dsc" id="dsc">Hover a layer to see what it does. Click to open it.</p>
+      <ul class="chips" id="chips"></ul>
+
+      <div class="hero__cta">
+        <a class="btn btn--ink" href="#contact">Get in touch</a>
+        <a class="btn btn--ghost" href="#check">See the example</a>
+      </div>
+
+      <ol class="legend" aria-label="The four layers">
+        <li data-i="0"><a href="#sites">01 Layer one</a></li>
+        <li data-i="1"><a href="#rank">02 Layer two</a></li>
+        <li data-i="2"><a href="#calls">03 Layer three</a></li>
+        <li data-i="3"><a href="#coverage">04 Layer four</a></li>
+      </ol>
+    </div>
+
+    <div class="scene" id="scene">
+      <div class="scene__grid" aria-hidden="true"></div>
+      <div class="scene__floor" aria-hidden="true"></div>
+      <span class="scene__glow" id="glow" aria-hidden="true"></span>
+      <span class="scene__snap" id="snap" aria-hidden="true"></span>
+
+      <div class="stack" id="stack">
+        <a class="layer" href="#sites" aria-label="Layer one: placeholder description">
+          <span class="layer__body" style="--d:0s"><span class="layer__top"></span><span class="layer__front"></span><span class="layer__side"></span></span>
+        </a>
+        <a class="layer" href="#rank" aria-label="Layer two: placeholder description">
+          <span class="layer__body" style="--d:-1.5s"><span class="layer__top"></span><span class="layer__front"></span><span class="layer__side"></span></span>
+        </a>
+        <a class="layer" href="#calls" aria-label="Layer three: placeholder description">
+          <span class="layer__body" style="--d:-3s"><span class="layer__top"></span><span class="layer__front"></span><span class="layer__side"></span></span>
+        </a>
+        <a class="layer" href="#coverage" aria-label="Layer four: placeholder description">
+          <span class="layer__body" style="--d:-4.5s"><span class="layer__top"></span><span class="layer__front"></span><span class="layer__side"></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES: the four layers in full. The hero reads its copy from these cards. -->
+  <section class="section svc-section" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">The four layers</p>
+        <h2 class="h2" id="services-title">One stack. Four jobs.</h2>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc" id="sites" data-word="work for you.">
+          <p class="svc__num">01</p>
+          <h3 class="svc__name">Layer one</h3>
+          <p class="svc__title">Placeholder title</p>
+          <p class="svc__desc">Placeholder description. Replace this with what the first layer does for the visitor.</p>
+          <ul class="chips">
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </article>
+
+        <article class="svc" id="rank" data-word="get found.">
+          <p class="svc__num">02</p>
+          <h3 class="svc__name">Layer two</h3>
+          <p class="svc__title">Placeholder title</p>
+          <p class="svc__desc">Placeholder description. Replace this with what the second layer does.</p>
+          <ul class="chips">
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </article>
+
+        <article class="svc" id="calls" data-word="get answered.">
+          <p class="svc__num">03</p>
+          <h3 class="svc__name">Layer three</h3>
+          <p class="svc__title">Placeholder title</p>
+          <p class="svc__desc">Placeholder description. Replace this with what the third layer does.</p>
+          <ul class="chips">
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </article>
+
+        <article class="svc" id="coverage" data-word="reach further.">
+          <p class="svc__num">04</p>
+          <h3 class="svc__name">Layer four</h3>
+          <p class="svc__title">Placeholder title</p>
+          <p class="svc__desc">Placeholder description. Replace this with what the fourth layer does.</p>
+          <ul class="chips">
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+            <li>Placeholder</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF: numbers on ink. Replace with figures you can back up. -->
+  <section class="section proof" id="proof" aria-labelledby="proof-title">
+    <div class="wrap">
+      <p class="kicker">Proof</p>
+      <h2 class="h2" id="proof-title">Placeholder proof heading.</h2>
+      <dl class="stats">
+        <div class="stat">
+          <dt class="stat__label">placeholder metric</dt>
+          <dd class="stat__num">00</dd>
+        </div>
+        <div class="stat">
+          <dt class="stat__label">placeholder metric</dt>
+          <dd class="stat__num">00</dd>
+        </div>
+        <div class="stat">
+          <dt class="stat__label">placeholder metric</dt>
+          <dd class="stat__num">00</dd>
+        </div>
+        <div class="stat">
+          <dt class="stat__label">placeholder metric</dt>
+          <dd class="stat__num">00</dd>
+        </div>
+      </dl>
+      <p class="fine">Replace these figures with your own, and date them.</p>
+    </div>
+  </section>
+
+  <!-- CHECK IT: a search a visitor can run themselves. -->
+  <section class="section check" id="check" aria-labelledby="check-title">
+    <div class="wrap check__grid">
+      <div>
+        <p class="kicker">Check it yourself</p>
+        <h2 class="h2" id="check-title">Placeholder check heading.</h2>
+        <p class="lead">Placeholder sentence that tells the visitor what to search and what to look for.</p>
+      </div>
+      <div class="query" role="note" aria-label="Example search">
+        <span class="query__label">Search</span>
+        <span class="query__text">example search phrase</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW: three steps. -->
+  <section class="section how" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2 class="h2" id="how-title">Three steps.</h2>
+      <ol class="steps">
+        <li>
+          <span>01</span>
+          <h3>Placeholder step</h3>
+          <p>Placeholder description of the first step.</p>
+        </li>
+        <li>
+          <span>02</span>
+          <h3>Placeholder step</h3>
+          <p>Placeholder description of the second step.</p>
+        </li>
+        <li>
+          <span>03</span>
+          <h3>Placeholder step</h3>
+          <p>Placeholder description of the third step.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta" id="contact" aria-labelledby="cta-title">
+    <div class="wrap cta__inner">
+      <h2 class="h2" id="cta-title">Placeholder call to action.</h2>
+      <p class="lead">Placeholder supporting sentence.</p>
+      <a class="btn btn--accent" href="#top">Get in touch</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span class="nav__brand">Placeholder Brand</span>
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#proof">Proof</a>
+      <a href="#check">Check it</a>
+    </nav>
+    <p class="fine">Placeholder footer line.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

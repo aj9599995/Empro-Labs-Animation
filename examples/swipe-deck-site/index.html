@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fork or Pass | Pick tonight's dinner</title>
+<meta name="description" content="A concept site for a restaurant menu you swipe. Drag a dish right to fork it, left to pass; cards tilt, stamp and fly off.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nunito:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <span class="brand">Fork <i>or</i> Pass</span>
+  <span class="note">Concept menu · not a real restaurant</span>
+</header>
+
+<main class="wrap">
+  <h1>Pick tonight's <i>dinner.</i></h1>
+  <p class="lead">Swipe right to fork it, left to pass. Or use the buttons and arrow keys.</p>
+
+  <div class="deck" id="deck" aria-live="polite"></div>
+
+  <div class="end" id="end" hidden>
+    <h2>Your table</h2>
+    <ul id="picks"></ul>
+    <button class="again" id="again">Start over</button>
+  </div>
+
+  <div class="ctrl" id="ctrl">
+    <button class="b pass" id="pass" aria-label="Pass">Pass</button>
+    <button class="b undo" id="undo" aria-label="Undo last swipe">Undo</button>
+    <button class="b fork" id="fork" aria-label="Fork it">Fork it</button>
+  </div>
+  <p class="count" id="count"></p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+:root { --bg: #0c0a1f; --fg: #f1ecff; --serif: "Fraunces", Georgia, serif; --sans: "Manrope", system-ui, sans-serif; }
+*,*::before,*::after { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: radial-gradient(ellipse at 50% 100%, #2b1b5e, var(--bg) 65%); color: var(--fg); font-family: var(--sans); overflow: hidden; }
+#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; cursor: crosshair; }
+.top { position: fixed; inset: 0 0 auto 0; display: flex; justify-content: space-between; align-items: center; padding: 20px clamp(18px,4vw,44px); pointer-events: none; }
+.brand { font: 600 22px var(--serif); font-style: italic; } .brand i { color: #ff9ad5; }
+.note { font-size: 12px; opacity: .6; }
+.copy { position: fixed; left: 0; right: 0; top: clamp(70px, 15vh, 150px); text-align: center; pointer-events: none; padding: 0 20px; }
+h1 { font: 300 clamp(48px, 9vw, 120px)/.95 var(--serif); font-style: italic; letter-spacing: -.03em; margin: 0 0 14px; text-shadow: 0 4px 40px rgba(0,0,0,.5); }
+h1 i { font-weight: 600; color: #ff9ad5; }
+#msg { margin: 0 0 20px; font-size: 17px; opacity: .8; min-height: 1.6em; }
+.ctrl { display: inline-flex; gap: 10px; pointer-events: auto; }
+.ctrl button { font: 500 14px var(--sans); color: var(--fg); background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 10px 22px; cursor: pointer; backdrop-filter: blur(6px); transition: background-color .2s, color .2s; }
+.ctrl button:hover, .ctrl button.on { background: var(--fg); color: #1a1040; }
+.ctrl button:focus-visible { outline: 2px solid #ff9ad5; outline-offset: 3px; }
+@media (max-width: 600px) { .note { display: none; } }

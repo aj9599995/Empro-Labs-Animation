@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salt &amp; Ladle | A small recipe book</title>
+<meta name="description" content="A concept site shaped like a recipe book. Pages turn in 3D as you click, tap or press the arrow keys.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Caveat:wght@500;700&family=Josefin+Sans:wght@400;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <span class="brand">Salt <i>&amp;</i> Ladle</span>
+  <span class="note">Concept recipe book · not a real publication</span>
+</header>
+
+<main class="desk">
+  <div class="book" id="book" aria-label="Recipe book. Use the arrows to turn pages.">
+
+    <section class="leaf" data-i="0">
+      <div class="face front cover">
+        <p class="eyebrow">A small book of</p>
+        <h1>Salt<br><i>&amp;</i> Ladle</h1>
+        <p class="hand">three recipes worth repeating</p>
+        <span class="seal" aria-hidden="true">No. 1</span>
+      </div>
+      <div class="face back">
+        <h2>Contents</h2>
+        <ol class="toc">
+          <li><b>Slow tomato soup</b><span>p. 1</span></li>
+          <li><b>Skillet flatbread</b><span>p. 2</span></li>
+          <li><b>Lemon olive-oil cake</b><span>p. 3</span></li>
+        </ol>
+        <p class="hand note2">Turn the page. Dinner is two pages long.</p>
+      </div>
+    </section>
+
+    <section class="leaf" data-i="1">
+      <div class="face front">
+        <p class="num">Recipe 1</p>
+        <h2>Slow tomato soup</h2>
+        <p class="meta">Serves 4 · 45 min</p>
+        <ul class="ing"><li>1 kg ripe tomatoes</li><li>1 onion, sliced</li><li>4 garlic cloves</li><li>2 tbsp olive oil</li><li>Salt, a pinch of sugar</li></ul>
+      </div>
+      <div class="face back">
+        <p class="num">Method</p>
+        <ol class="steps"><li>Soften the onion in oil, ten gentle minutes.</li><li>Add garlic, then the halved tomatoes.</li><li>Cover and cook down for half an hour.</li><li>Blend, season, and add the sugar last.</li></ol>
+        <p class="hand">Good with the flatbread →</p>
+      </div>
+    </section>
+
+    <section class="leaf" data-i="2">
+      <div class="face front">
+        <p class="num">Recipe 2</p>
+        <h2>Skillet flatbread</h2>
+        <p class="meta">Makes 6 · 25 min</p>
+        <ul class="ing"><li>250 g flour</li><li>150 ml warm water</li><li>1 tsp salt</li><li>2 tbsp yoghurt</li><li>A splash of oil</li></ul>
+      </div>
+      <div class="face back">
+        <p class="num">Method</p>
+        <ol class="steps"><li>Mix everything into a soft dough and rest it.</li><li>Divide into six and roll thin.</li><li>Cook in a hot dry pan until puffed and spotted.</li><li>Stack under a towel to stay soft.</li></ol>
+        <p class="hand">Do not skip the rest.</p>
+      </div>
+    </section>
+
+    <section class="leaf" data-i="3">
+      <div class="face front">
+        <p class="num">Recipe 3</p>
+        <h2>Lemon olive-oil cake</h2>
+        <p class="meta">Serves 8 · 55 min</p>
+        <ul class="ing"><li>3 eggs</li><li>150 g sugar</li><li>120 ml olive oil</li><li>2 lemons, zest and juice</li><li>180 g flour</li></ul>
+      </div>
+      <div class="face back">
+        <p class="num">Method</p>
+        <ol class="steps"><li>Whisk eggs and sugar until pale.</li><li>Stream in oil, then lemon.</li><li>Fold in flour and bake at 170°C.</li><li>Cool before slicing. It improves overnight.</li></ol>
+        <p class="hand">Best the next morning.</p>
+      </div>
+    </section>
+
+    <section class="leaf" data-i="4">
+      <div class="face front end">
+        <h2>The end,<br>for now.</h2>
+        <p>Salt &amp; Ladle is a concept page made to show a 3D page-turn. These recipes are for fun, not a real cookbook.</p>
+        <p class="hand">Press ← to read it again.</p>
+      </div>
+      <div class="face back backcover"><span>Salt <i>&amp;</i> Ladle</span></div>
+    </section>
+
+  </div>
+
+  <div class="ctrl">
+    <button id="prev" aria-label="Previous page">←</button>
+    <span id="pos" aria-live="polite">Cover</span>
+    <button id="next" aria-label="Next page">→</button>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

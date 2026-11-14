@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parsec CLI | Ship from the command line</title>
+<meta name="description" content="A concept site for a command-line deploy tool. The page types itself, decodes its headline, and answers commands you type.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scan" aria-hidden="true"></div>
+
+<main class="win">
+  <header class="bar">
+    <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="ttl">parsec — concept tool, not real software</span>
+  </header>
+
+  <section class="screen" id="screen" aria-live="polite" aria-label="Terminal">
+    <h1 class="hl" id="hl" aria-label="Ship faster from the command line."></h1>
+    <div id="out"></div>
+    <form class="prompt" id="form" autocomplete="off">
+      <label for="cmd" class="ps">parsec ~ $</label>
+      <input id="cmd" spellcheck="false" autocapitalize="off" aria-label="Type a command">
+      <span class="caret" aria-hidden="true"></span>
+    </form>
+  </section>
+
+  <footer class="keys">
+    <button data-c="help">help</button>
+    <button data-c="features">features</button>
+    <button data-c="deploy">deploy</button>
+    <button data-c="pricing">pricing</button>
+    <button data-c="theme">theme</button>
+    <button data-c="clear">clear</button>
+  </footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

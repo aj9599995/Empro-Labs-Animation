@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Squeeze &amp; Co. | Juice that follows you</title>
+<meta name="description" content="A concept site for a juice bar. A blob of liquid chases your cursor, splits, merges, and buttons lean toward you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;800&family=Nunito:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="gooFilter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b"/>
+      <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10" result="g"/>
+      <feComposite in="SourceGraphic" in2="g" operator="atop"/>
+    </filter>
+  </defs>
+</svg>
+
+<header class="top">
+  <a class="brand" href="#">squeeze<b>&amp;co</b></a>
+  <nav><a href="#menu">Menu</a><a href="#visit">Visit</a></nav>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="goo" id="goo" aria-hidden="true"></div>
+    <div class="copy">
+      <h1>Squeeze<br>the day.</h1>
+      <p>Cold-pressed juice for people who keep moving. Move your mouse. It follows.</p>
+      <a class="mag btn" href="#menu"><span>See the menu</span></a>
+    </div>
+  </section>
+
+  <section class="menu" id="menu">
+    <h2>Three bottles today</h2>
+    <div class="cards">
+      <article class="card mag" style="--c:#ff8a3d"><h3>Sunrise</h3><p>Orange, carrot, turmeric and a squeeze of lemon.</p><b>$7</b></article>
+      <article class="card mag" style="--c:#8bd450"><h3>Greenhouse</h3><p>Cucumber, apple, celery, mint and lime.</p><b>$8</b></article>
+      <article class="card mag" style="--c:#e8467c"><h3>Beet Box</h3><p>Beet, raspberry, ginger and a little honey.</p><b>$8</b></article>
+    </div>
+  </section>
+
+  <footer class="foot" id="visit">Concept brand made to show a liquid cursor effect. Not a real juice bar.</footer>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

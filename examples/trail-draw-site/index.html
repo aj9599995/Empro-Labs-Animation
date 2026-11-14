@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Switchback Guides | Follow the trail</title>
+<meta name="description" content="A concept site for a guided-hiking outfit. Scroll and a trail line draws itself down the page, lighting up each stop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Switchback<b>.</b></a>
+  <span class="alt" id="alt" aria-hidden="true">0 m</span>
+</header>
+
+<main class="page" id="page">
+  <svg class="trail" id="trail" aria-hidden="true">
+    <path id="ghost" class="ghost"/>
+    <path id="line" class="line"/>
+    <circle id="hiker" r="9" class="hiker"/>
+  </svg>
+
+  <section class="stop hero" data-alt="0">
+    <div class="ridge" aria-hidden="true">
+      <svg viewBox="0 0 1200 300" preserveAspectRatio="none"><path class="m1" d="M0 300V190l120-70 110 60 140-110 150 120 120-80 160 100 130-90 160 90 110-60v240z"/><path class="m2" d="M0 300V240l140-60 120 40 160-90 140 90 150-70 170 80 140-60 180 70v100z"/></svg>
+    </div>
+    <div class="txt">
+      <p class="kick">Guided hikes · Pacific Northwest</p>
+      <h1 class="reveal">Follow the<br>trail.</h1>
+      <p class="lead reveal">Small groups, local guides, and one line on the map from the car park to the summit. Scroll to start walking.</p>
+    </div>
+  </section>
+
+  <section class="stop left" data-alt="420">
+    <div class="txt">
+      <p class="kick">Stop 1 · 420 m</p>
+      <h2 class="reveal">Trailhead</h2>
+      <p class="reveal">Boots checked, packs weighed, a short briefing over coffee. Everyone leaves knowing the plan.</p>
+    </div>
+  </section>
+
+  <section class="stop right" data-alt="980">
+    <div class="txt">
+      <p class="kick">Stop 2 · 980 m</p>
+      <h2 class="reveal">Old forest</h2>
+      <p class="reveal">Moss, cedar and the quiet kind of climbing. We stop for water at the creek crossing.</p>
+    </div>
+  </section>
+
+  <section class="stop left" data-alt="1640">
+    <div class="txt">
+      <p class="kick">Stop 3 · 1,640 m</p>
+      <h2 class="reveal">The ridge</h2>
+      <p class="reveal">Trees thin out and the whole valley opens up. This is the stretch people photograph.</p>
+    </div>
+  </section>
+
+  <section class="stop right" data-alt="2310">
+    <div class="txt">
+      <p class="kick">Stop 4 · 2,310 m</p>
+      <h2 class="reveal">Summit</h2>
+      <p class="reveal">Lunch above the clouds. We wait here until the wind drops, and never rush the top.</p>
+    </div>
+  </section>
+
+  <section class="stop end left" data-alt="1850">
+    <div class="txt">
+      <p class="kick">Camp · 1,850 m</p>
+      <h2 class="reveal">Sleep under it all.</h2>
+      <a class="btn reveal" href="mailto:hello@example.com">Join a hike</a>
+      <p class="small">Switchback is a concept brand made to show a scroll-drawn trail. Not a real outfit.</p>
+    </div>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

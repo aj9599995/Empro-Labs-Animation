@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kettle &amp; Cloud | Six teas, one ring</title>
+<meta name="description" content="A concept site for a small-batch tea house. Drag the ring of frames to move between six teas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top">Kettle <i>&amp;</i> Cloud</a>
+  <nav><a href="#rituals">Rituals</a><a href="#visit">Visit</a></nav>
+</header>
+
+<main>
+<section class="stage" id="top" aria-label="Tea collection">
+  <div class="spot" aria-hidden="true"></div>
+
+  <div class="ringwrap" id="ringwrap">
+    <div class="ring" id="ring"></div>
+  </div>
+
+  <div class="caption">
+    <p class="count" id="count" aria-hidden="true">01 / 06</p>
+    <h1 class="word" id="word" aria-live="polite">Smoke</h1>
+    <p class="notes" id="notes"></p>
+    <p class="meta" id="meta"></p>
+    <div class="ctrl">
+      <button class="arrow" id="prev" aria-label="Previous tea">&larr;</button>
+      <div class="dots" id="dots"></div>
+      <button class="arrow" id="next" aria-label="Next tea">&rarr;</button>
+    </div>
+    <p class="hint">Drag, scroll or use the arrow keys</p>
+  </div>
+</section>
+
+<section class="rituals" id="rituals">
+  <h2>Three small rituals</h2>
+  <ol>
+    <li><span>01</span><h3>Warm the pot</h3><p>A splash of hot water first, so the leaf wakes up evenly.</p></li>
+    <li><span>02</span><h3>Watch the clock</h3><p>Each tea has its own time and temperature. Set a timer and trust it.</p></li>
+    <li><span>03</span><h3>Pour it all</h3><p>Leave no water on the leaf, or the second cup turns bitter.</p></li>
+  </ol>
+</section>
+</main>
+
+<footer class="foot" id="visit">
+  <p>Kettle &amp; Cloud is a concept brand made to show a rotating frame ring. Not a real shop.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

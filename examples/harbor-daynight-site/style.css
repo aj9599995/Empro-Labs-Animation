@@ -1,0 +1,39 @@
+:root { --bg: #f6f1e7; --ink: #1d2433; --serif: "Young Serif", Georgia, serif; --sans: "Figtree", system-ui, sans-serif; }
+*,*::before,*::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 20px clamp(18px,4vw,44px); }
+.brand { font: 400 22px var(--serif); } .brand i { color: #cf4a3c; }
+.note { font-size: 12px; opacity: .55; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 8px clamp(14px,3vw,30px) 50px; text-align: center; }
+h1 { font: 400 clamp(38px, 6.5vw, 84px)/1 var(--serif); letter-spacing: -.02em; margin: 10px 0 12px; } h1 i { color: #cf4a3c; }
+.lead { min-height: 1.6em; margin: 0 0 22px; font-size: 18px; opacity: .8; }
+
+.scene { margin: 0; position: relative; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 60px rgba(20,25,45,.25); aspect-ratio: 1200 / 640; background: #222;
+  --sky1: #3a8ee0; --sky2: #a9d8f5; --sea1: #2c7fb3; --sea2: #14557f; --cloud: #fff; --hill: #6c8f7b; --wave: rgba(255,255,255,.35); --rock: #6a6458; --wall: #efe2c8; --lamp: #5a5f75; }
+.scene svg { display: block; width: 100%; height: 100%; }
+.hud { position: absolute; left: 18px; bottom: 16px; display: flex; gap: 12px; align-items: baseline; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
+#clock { font: 400 34px var(--serif); } #phase { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+
+.waves { fill: none; stroke-width: 2.4; stroke-linecap: round; }
+.w1 { animation: drift 9s linear infinite; } .w2 { animation: drift 6.5s linear infinite reverse; } .w3 { animation: drift 5s linear infinite; }
+@keyframes drift { to { transform: translateX(100px); } }
+.cloud { animation: float 60s linear infinite; } .c2 { animation-duration: 85s; animation-delay: -30s; } .c3 { animation-duration: 110s; animation-delay: -60s; }
+@keyframes float { from { transform: translateX(-340px); } to { transform: translateX(1500px); } }
+.bob { animation: bob 4s ease-in-out infinite; transform-origin: 660px 540px; } .boat { animation: sail 40s ease-in-out infinite alternate; }
+@keyframes bob { 0%,100% { transform: translateY(0) rotate(-1.5deg); } 50% { transform: translateY(5px) rotate(1.5deg); } }
+@keyframes sail { from { transform: translateX(-140px); } to { transform: translateX(160px); } }
+.beam { animation: sweep 6s ease-in-out infinite alternate; transform-origin: 0 0; }
+@keyframes sweep { from { transform: rotate(-12deg) scaleX(.55); } to { transform: rotate(12deg) scaleX(1); } }
+.twinkle { animation: tw 3s ease-in-out infinite; }
+@keyframes tw { 50% { opacity: .25; } }
+
+.ctrl { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; margin-top: 22px; }
+#play { font: 700 15px var(--sans); background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 12px 24px; cursor: pointer; }
+#play[aria-pressed="true"] { background: #cf4a3c; }
+#play:focus-visible, input:focus-visible { outline: 3px solid #cf4a3c; outline-offset: 3px; }
+.slider { display: flex; align-items: center; gap: 12px; font-size: 22px; width: min(520px, 90vw); }
+input[type=range] { flex: 1; accent-color: #cf4a3c; height: 28px; }
+.foot { margin: 28px 0 0; font-size: 12px; opacity: .55; }
+
+@media (max-width: 600px) { .note { display: none; } #clock { font-size: 24px; } }
+@media (prefers-reduced-motion: reduce) { .waves, .cloud, .bob, .boat, .beam, .twinkle { animation: none !important; } }

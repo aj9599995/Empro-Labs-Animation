@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Late Reel Cinema Club | Drag the programme</title>
+<meta name="description" content="A concept site for a late-night repertory cinema. Drag, fling or scroll the posters; they skew with your speed and loop forever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="#">LATE REEL</a>
+  <p class="mono">Fri–Sun · 23:00 · concept cinema, not real</p>
+</header>
+
+<main class="stage" id="stage" aria-label="Programme. Drag or scroll sideways.">
+  <div class="bigword" id="bigword" aria-hidden="true">NOIR</div>
+  <div class="track" id="track"></div>
+  <div class="info">
+    <p class="mono" id="meta"></p>
+    <h1 id="title"></h1>
+    <p class="mono hint">Drag · fling · scroll</p>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

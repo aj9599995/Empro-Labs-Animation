@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moonrise Festival | Departures</title>
+<meta name="description" content="A concept festival site shaped like a railway departures board. Split-flap letters clatter through the alphabet to spell each day's lineup, above a flip-clock countdown.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&family=Archivo+Narrow:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <span class="brand">MOONRISE <i>FESTIVAL</i></span>
+  <span class="note">Concept festival · not a real event</span>
+</header>
+
+<main class="wrap">
+  <h1 class="sr">Moonrise Festival lineup</h1>
+  <p class="lead">Next stop: <b>12 June 2027</b>. Pick a day and watch the board update.</p>
+
+  <section class="clockwrap" aria-label="Countdown to the festival">
+    <div class="unit"><div class="board" id="cd-d"></div><span>days</span></div>
+    <div class="unit"><div class="board" id="cd-h"></div><span>hours</span></div>
+    <div class="unit"><div class="board" id="cd-m"></div><span>min</span></div>
+    <div class="unit"><div class="board" id="cd-s"></div><span>sec</span></div>
+  </section>
+
+  <section class="frame" aria-label="Lineup board">
+    <div class="tabs" id="tabs" role="tablist" aria-label="Festival day">
+      <button role="tab" class="on" data-d="0">Friday</button>
+      <button role="tab" data-d="1">Saturday</button>
+      <button role="tab" data-d="2">Sunday</button>
+    </div>
+    <div class="head"><span>Time</span><span>Act</span><span>Stage</span></div>
+    <div class="grid" id="grid" aria-hidden="true"></div>
+    <p class="sr" id="live" aria-live="polite"></p>
+  </section>
+
+  <p class="foot">Moonrise is a concept page made to show a split-flap display. The acts and date are invented.</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

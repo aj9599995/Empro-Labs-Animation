@@ -1,0 +1,65 @@
+/* The Garden Almanac: every animation here is a CSS scroll-driven animation (animation-timeline).
+   No JavaScript. Works in Chromium 115+ and Safari 26; elsewhere the page simply shows static content. */
+:root { --paper: #f3ecd8; --ink: #1f2a1c; --leaf: #2f5d34; --clay: #c4572b; --serif: "Playfair Display", Georgia, serif; --sans: "Karla", system-ui, sans-serif; }
+*,*::before,*::after { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+
+.top { position: fixed; inset: 0 0 auto 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 18px clamp(18px,4vw,44px); }
+.brand { font: 800 22px var(--serif); text-decoration: none; color: var(--ink); }
+.brand i { font-weight: 500; color: var(--clay); }
+.note { font-size: 12px; opacity: .6; }
+
+.progress { position: fixed; left: 0; top: 0; height: 5px; width: 100%; background: var(--clay); transform-origin: 0 50%; transform: scaleX(0); z-index: 30; }
+.dial { position: fixed; right: clamp(16px,4vw,48px); bottom: clamp(16px,4vw,48px); width: 74px; height: 74px; border-radius: 50%; border: 2px solid var(--ink); z-index: 20; background: var(--paper); }
+.dial i { position: absolute; left: 50%; top: 50%; width: 2px; height: 32px; margin-left: -1px; margin-top: -32px; background: var(--clay); transform-origin: 50% 100%; border-radius: 2px; }
+.dial i::after { content: ""; position: absolute; left: -5px; top: -4px; width: 12px; height: 12px; border-radius: 50%; background: var(--clay); }
+
+.hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 120px clamp(20px,7vw,110px) 60px; max-width: 1100px; margin: 0 auto; }
+.kick { margin: 0 0 14px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; font-size: 13px; color: var(--leaf); }
+h1 { font: 800 clamp(56px, 10vw, 140px)/.95 var(--serif); letter-spacing: -.03em; margin: 0 0 24px; }
+h1 i { font-weight: 500; color: var(--clay); }
+.lead { max-width: 44ch; font-size: 21px; margin: 0; }
+
+.months { padding: 0 clamp(14px,5vw,70px) 20vh; }
+.slot { height: 90vh; position: relative; }
+.card {
+  position: sticky; top: calc(84px + var(--i) * 22px);
+  height: 62vh; min-height: 320px; max-width: 980px; margin: 0 auto;
+  background: var(--bg); border: 2px solid var(--ink); border-radius: 22px;
+  box-shadow: 0 -6px 0 rgba(0,0,0,.05), 10px 10px 0 var(--ink);
+  padding: clamp(24px,4vw,56px); display: flex; flex-direction: column; justify-content: flex-end;
+  transform-origin: 50% 0;
+}
+.card .m { margin: 0 0 8px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
+.card h2 { font: 800 clamp(40px, 7vw, 92px)/.95 var(--serif); letter-spacing: -.03em; margin: 0 0 14px; }
+.card p:last-child { margin: 0; max-width: 40ch; }
+
+.outro { min-height: 70vh; display: grid; align-content: center; justify-items: center; text-align: center; padding: 60px 20px 120px; }
+.outro h2 { font: 800 clamp(38px, 7vw, 96px)/1 var(--serif); letter-spacing: -.03em; margin: 0 0 16px; max-width: 14ch; }
+.outro p { max-width: 44ch; opacity: .75; margin: 0; }
+
+/* ---- scroll-driven animations ---- */
+@supports (animation-timeline: scroll()) {
+  /* page progress bar and the turning dial follow total scroll */
+  .progress { animation: grow linear both; animation-timeline: scroll(root); }
+  .dial i { animation: turn linear both; animation-timeline: scroll(root); }
+
+  /* words rise and fade in as they enter the viewport */
+  .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+  .d1 { animation-range: entry 10% cover 40%; }
+  .d2 { animation-range: entry 20% cover 45%; }
+
+  /* each card shrinks and dims while the next one slides over it */
+  .slot { view-timeline: --slot block; }
+  .card { animation: bury linear both; animation-timeline: --slot; animation-range: exit-crossing 0% exit-crossing 100%; }
+}
+@keyframes grow { to { transform: scaleX(1); } }
+@keyframes turn { to { transform: rotate(720deg); } }
+@keyframes rise { from { opacity: 0; transform: translateY(46px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+@keyframes bury { to { transform: scale(.9); filter: brightness(.78); } }
+
+@media (max-width: 700px) { .note { display: none; } .card { height: 56vh; } }
+@media (prefers-reduced-motion: reduce) {
+  .progress, .dial i, .reveal, .card { animation: none !important; }
+  .progress { transform: scaleX(1); }
+}

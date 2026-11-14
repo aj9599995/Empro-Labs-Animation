@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harp &amp; Hum | Pluck something</title>
+<meta name="description" content="A concept site for a sound toy. Fourteen glowing strings you can pluck with your cursor, finger or keyboard, with real notes played in your browser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,300;1,9..144,600&family=Manrope:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c" aria-label="Fourteen strings. Drag across them or press the keys A S D F G H J K L Z X C V B to play." role="img"></canvas>
+
+<header class="top">
+  <span class="brand">Harp <i>&amp;</i> Hum</span>
+  <span class="note">Concept sound toy · plays real notes</span>
+</header>
+
+<section class="copy">
+  <h1>Pluck <i>something.</i></h1>
+  <p id="msg">Drag across the strings. Click once to turn the sound on.</p>
+  <div class="ctrl">
+    <button id="auto">Play for me</button>
+    <button id="mute" aria-pressed="false">Sound on</button>
+  </div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

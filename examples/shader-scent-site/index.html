@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Maison Nocturne | Four scents, one night</title>
+<meta name="description" content="A concept site for a perfume house. A live GPU shader paints a flowing colour field that changes with each scent and bends toward your cursor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+
+<header class="top">
+  <a class="brand" href="#">MAISON NOCTURNE</a>
+  <span class="note">Concept house · not a real perfumer</span>
+</header>
+
+<main class="stage">
+  <p class="idx" id="idx">I / IV</p>
+  <h1 id="name">Vesper</h1>
+  <p class="tag" id="tag"></p>
+  <dl class="notes" id="notes"></dl>
+
+  <nav class="scents" id="scents" aria-label="Scents"></nav>
+  <p class="hint">Move your cursor through the colour</p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

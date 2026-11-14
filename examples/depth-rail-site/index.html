@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Meridian Night Rail | Scroll to depart</title>
+<meta name="description" content="A concept site for a night-train line from Lisbon to Vienna. Scroll to fly through the stations.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">Meridian <b>Night Rail</b></a>
+  <span class="mono" id="clock">00:00</span>
+</header>
+
+<div class="track" id="track">
+  <div class="viewport" id="viewport">
+    <div class="world" id="world">
+
+      <article class="station" data-n="00">
+        <div class="card">
+          <p class="mono">Line 7 · Lisbon to Vienna</p>
+          <h1>Sleep through<br>four borders.</h1>
+          <p>One train, six cities, no airports. Scroll to depart.</p>
+        </div>
+      </article>
+
+      <article class="station" data-n="01">
+        <div class="card">
+          <p class="mono">Stop 1 · 38.7°N 9.1°W · dep 20:40</p>
+          <h2>Lisbon</h2>
+          <p>The line starts at the river. Dinner is served as the Tagus slides away.</p>
+        </div>
+      </article>
+
+      <article class="station" data-n="02">
+        <div class="card">
+          <p class="mono">Stop 2 · 40.4°N 3.7°W · 06:10</p>
+          <h2>Madrid</h2>
+          <p>Coffee on the platform while the cars are re-coupled. Twenty-five minutes.</p>
+        </div>
+      </article>
+
+      <article class="station" data-n="03">
+        <div class="card">
+          <p class="mono">Stop 3 · 45.8°N 4.8°E · 15:35</p>
+          <h2>Lyon</h2>
+          <p>A long afternoon pause for lunch in the old town, then onward to the Alps.</p>
+        </div>
+      </article>
+
+      <article class="station" data-n="04">
+        <div class="card">
+          <p class="mono">Stop 4 · 47.4°N 8.5°E · 21:20</p>
+          <h2>Zurich</h2>
+          <p>Lake light at dusk. The second night aboard begins here.</p>
+        </div>
+      </article>
+
+      <article class="station" data-n="05">
+        <div class="card final">
+          <p class="mono">End of line · 48.2°N 16.4°E · 07:05</p>
+          <h2>Vienna</h2>
+          <p>You arrive rested, in the middle of the city. Fictional line, real daydream.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <nav class="rail" id="rail" aria-label="Stations"></nav>
+    <p class="hint mono" id="hint">Scroll ↓</p>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

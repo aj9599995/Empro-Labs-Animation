@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stretch &amp; Co. | A variable type foundry</title>
+<meta name="description" content="A concept type foundry site. Every letter of the headline swells in weight and width as your cursor nears it, and a live tester lets you drag the font's axes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,100..900&family=Inter:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <span class="brand">Stretch<i>&amp;</i>Co.</span>
+  <span class="note">Concept foundry · not a real type company</span>
+</header>
+
+<main>
+  <section class="hero" id="hero" aria-labelledby="h">
+    <h1 id="h" aria-label="Stretch with your cursor"><span class="line" id="l1" aria-hidden="true">STRETCH</span><span class="line small" id="l2" aria-hidden="true">with your cursor</span></h1>
+    <p class="sub">One font file. Nine weights, a hundred widths. Move across the letters.</p>
+  </section>
+
+  <section class="tester" aria-labelledby="t-h">
+    <h2 id="t-h">Try the axes</h2>
+    <div class="card">
+      <textarea id="txt" rows="2" spellcheck="false" aria-label="Sample text">Sphinx of black quartz, judge my vow.</textarea>
+      <div class="ctrls">
+        <label>Weight <output id="ow">500</output><input id="w" type="range" min="100" max="900" value="500"></label>
+        <label>Width <output id="od">100</output><input id="d" type="range" min="50" max="150" value="100"></label>
+        <label>Size <output id="os">72</output><input id="s" type="range" min="24" max="160" value="72"></label>
+      </div>
+      <div class="btns"><button id="rand">Surprise me</button><button id="reset">Reset</button></div>
+    </div>
+  </section>
+
+  <section class="axes">
+    <article><b>wght</b><p style="font-variation-settings:'wght' 100,'wdth' 100">Thin</p><p style="font-variation-settings:'wght' 900,'wdth' 100">Black</p></article>
+    <article><b>wdth</b><p style="font-variation-settings:'wght' 600,'wdth' 50">Narrow</p><p style="font-variation-settings:'wght' 600,'wdth' 150">Extended</p></article>
+  </section>
+</main>
+
+<footer class="foot">Stretch &amp; Co. is a concept page made to show variable-font animation. Set in Anybody, a free variable font.</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

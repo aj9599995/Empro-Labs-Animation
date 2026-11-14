@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gumdrop Labs | Pick one up</title>
+<meta name="description" content="A concept site for a candy lab. Flavours tumble into a pile you can grab, throw and shake.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=DM+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">gumdrop<b>labs</b></a>
+  <p class="small">Concept candy brand · not a real shop</p>
+</header>
+
+<main class="stage" id="stage">
+  <canvas id="c" aria-label="Candies you can drag and throw" role="img"></canvas>
+  <div class="copy">
+    <h1>Everything<br>lands somewhere.</h1>
+    <p>Twenty-eight flavours, tumbled into one pile. Grab one, throw it, shake the lot.</p>
+    <div class="ctrl">
+      <button id="shake">Shake it</button>
+      <button id="more">Drop more</button>
+      <button id="reset" class="ghost">Reset</button>
+    </div>
+  </div>
+  <p class="count" id="count" aria-live="polite"></p>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

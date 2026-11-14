@@ -1,0 +1,43 @@
+:root { --bg: #fff1dc; --ink: #2b1a12; --green: #2f9e5b; --red: #e5484d; --display: "Bagel Fat One", system-ui, sans-serif; --sans: "Nunito", system-ui, sans-serif; }
+*,*::before,*::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.top { display: flex; justify-content: space-between; align-items: baseline; padding: 18px clamp(16px,4vw,44px); }
+.brand { font: 400 24px var(--display); } .brand i { color: var(--red); font-style: normal; }
+.note { font-size: 12px; opacity: .55; }
+.wrap { max-width: 560px; margin: 0 auto; padding: 0 16px 40px; text-align: center; }
+h1 { font: 400 clamp(36px, 8vw, 58px)/1 var(--display); margin: 6px 0 10px; } h1 i { color: var(--red); font-style: normal; }
+.lead { margin: 0 0 22px; font-size: 16px; opacity: .8; }
+
+.deck { position: relative; width: min(360px, 88vw); height: clamp(330px, calc(100svh - 360px), 500px); margin: 0 auto; touch-action: pan-y; }
+.card { position: absolute; inset: 0; border-radius: 26px; background: #fff; box-shadow: 0 18px 44px rgba(43,26,18,.22), inset 0 0 0 2px rgba(43,26,18,.9); overflow: hidden; display: flex; flex-direction: column; text-align: left; touch-action: none; user-select: none; will-change: transform; cursor: grab; transform-origin: 50% 90%; }
+.card.drag { cursor: grabbing; }
+.art { flex: 1 1 55%; position: relative; background: var(--a); overflow: hidden; }
+.plate { position: absolute; left: 50%; top: 54%; width: 62%; aspect-ratio: 1; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #f3e9db 70%); box-shadow: 0 10px 0 rgba(0,0,0,.12); }
+.food { position: absolute; left: 50%; top: 54%; width: 40%; aspect-ratio: 1; transform: translate(-50%,-50%); border-radius: 50%; background: radial-gradient(circle at 30% 30%, var(--b), var(--c)); }
+.dot { position: absolute; border-radius: 50%; background: var(--d); width: 12%; aspect-ratio: 1; }
+.info { padding: 16px 20px 20px; }
+.info h3 { font: 400 28px/1.05 var(--display); margin: 0 0 6px; }
+.info p { margin: 0 0 10px; font-size: 14.5px; line-height: 1.4; opacity: .8; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; } .tags span { font: 800 11px var(--sans); letter-spacing: .08em; text-transform: uppercase; border: 1.5px solid var(--ink); border-radius: 99px; padding: 3px 9px; } .tags b { margin-left: auto; font: 400 22px var(--display); }
+.stamp { position: absolute; top: 22px; font: 400 34px var(--display); letter-spacing: .04em; border: 4px solid; border-radius: 12px; padding: 2px 14px; opacity: 0; pointer-events: none; }
+.stamp.yes { left: 20px; color: var(--green); transform: rotate(-14deg); } .stamp.no { right: 20px; color: var(--red); transform: rotate(14deg); }
+
+.ctrl { display: flex; justify-content: center; gap: 12px; margin-top: 26px; }
+.b { font: 800 16px var(--sans); border: 2.5px solid var(--ink); border-radius: 999px; padding: 13px 26px; cursor: pointer; background: #fff; color: var(--ink); box-shadow: 0 4px 0 var(--ink); transition: transform .12s, box-shadow .12s; }
+.b:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
+.b.fork { background: var(--green); color: #fff; } .b.pass { background: var(--red); color: #fff; } .b.undo { padding: 13px 18px; }
+.b:disabled { opacity: .4; cursor: default; }
+.b:focus-visible, .again:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.count { margin: 18px 0 0; font-size: 14px; opacity: .7; }
+
+.end { min-height: min(500px, 62svh); padding-top: 10px; }
+.end[hidden] { display: none; }
+.end h2 { font: 400 40px var(--display); margin: 0 0 14px; }
+.end ul { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 8px; }
+.end li { background: #fff; border: 2px solid var(--ink); border-radius: 14px; padding: 12px 16px; display: flex; justify-content: space-between; font-weight: 800; }
+.end li span { font-family: var(--display); font-weight: 400; }
+.again { font: 800 16px var(--sans); background: var(--ink); color: #fff; border: 0; border-radius: 999px; padding: 14px 28px; cursor: pointer; }
+.empty { opacity: .7; }
+
+@media (max-width: 560px) { .note { display: none; } }
+@media (prefers-reduced-motion: reduce) { .card { transition: none !important; } }
