@@ -1,10 +1,10 @@
 ---
-name: real-estate-animation-mechanics
+name: empro-labs-animations
 argument-hint: "[animation mechanic to build, e.g. layered stack, scroll tunnel, or a new idea]"
 description: Builds distinct web animation mechanics as small, self-contained HTML, CSS and JavaScript pages, and keeps a catalogue of 22 tested examples. Use when the user asks for a different type of animation, a new animation style, a reference-style hover or scroll effect (such as a layered 3D stack, a scroll tunnel or a split-flap board), or a demo of an animation mechanic for a real estate or other business site. Not for production frameworks, backend work or video rendering.
 ---
 
-# Real Estate Animation Mechanics
+# Empro Labs Animation
 
 Builds one animation mechanic per page. Each page is a local, self-contained demo with placeholder brand copy, so it can be adapted to any business, including real estate.
 

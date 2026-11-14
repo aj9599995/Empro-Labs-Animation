@@ -1,4 +1,4 @@
-# Real Estate Animation Mechanics
+# Empro Labs Animation
 
 **A Claude Code skill that builds distinct web animation mechanics, with 22 tested demos.**
 
@@ -13,26 +13,26 @@ You need [Claude Code](https://claude.com/claude-code) and [Git](https://git-scm
 **Windows (PowerShell)**
 
 ```powershell
-$d = "$env:USERPROFILE\.claude\skills\real-estate-animation-mechanics"; if (Test-Path "$d\.git") { git -C $d pull --ff-only } else { git clone https://github.com/aj9599995/Real-Estate-Animation-Mechanics $d }
+$d = "$env:USERPROFILE\.claude\skills\empro-labs-animations"; if (Test-Path "$d\.git") { git -C $d pull --ff-only } else { git clone https://github.com/aj9599995/Empro-Labs-Animation $d }
 ```
 
 **Mac, Linux or Git Bash**
 
 ```bash
-d="$HOME/.claude/skills/real-estate-animation-mechanics"; if [ -d "$d/.git" ]; then git -C "$d" pull --ff-only; else git clone https://github.com/aj9599995/Real-Estate-Animation-Mechanics "$d"; fi && echo "Installed. Type /real-estate-animation-mechanics in Claude Code."
+d="$HOME/.claude/skills/empro-labs-animations"; if [ -d "$d/.git" ]; then git -C "$d" pull --ff-only; else git clone https://github.com/aj9599995/Empro-Labs-Animation "$d"; fi && echo "Installed. Type /empro-labs-animations in Claude Code."
 ```
 
-Then type `/` in Claude Code and choose **real-estate-animation-mechanics**. Add your request after it, for example `/real-estate-animation-mechanics build a split-flap board for an open-house schedule`.
+Then type `/` in Claude Code and choose **empro-labs-animations**. Add your request after it, for example `/empro-labs-animations build a split-flap board for an open-house schedule`.
 
 - If the command does not appear, run `/reload-skills`, or restart Claude Code.
 - Works in Claude Code: the terminal CLI, the desktop app and the IDE extensions. Other chat apps do not read this folder.
 - **Update:** paste the same line again.
-- **Remove:** delete the folder `~/.claude/skills/real-estate-animation-mechanics`.
+- **Remove:** delete the folder `~/.claude/skills/empro-labs-animations`.
 
 ## Try the examples
 
 ```bash
-cd real-estate-animation-mechanics/examples
+cd empro-labs-animations/examples
 python -m http.server 8000
 ```
 
@@ -73,7 +73,7 @@ Open http://localhost:8000 and choose a folder, for example `layered-stack-hyper
 ## Layout
 
 ```
-real-estate-animation-mechanics/
+empro-labs-animations/
 ├── SKILL.md                         # the skill (instructions for Claude)
 ├── README.md                        # this file
 ├── LICENSE                          # MIT
